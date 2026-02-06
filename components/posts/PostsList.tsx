@@ -1,5 +1,5 @@
 import { Post } from "@/data/posts/posts";
-import { PostCard } from "./Card";
+import { PostCard } from "./PostCard";
 
 interface PostsListProps {
   posts: Post[];
@@ -7,7 +7,7 @@ interface PostsListProps {
 
 export default function PostsList({ posts }: PostsListProps) {
   return (
-    <div>
+    <div className="">
       {posts.map((post) => (
         <PostCard key={post.slug} post={post} />
       ))}
