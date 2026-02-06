@@ -124,6 +124,14 @@
   .nav-link-neutral {
     @apply border-b-neutral hover:border-neutral! active:bg-neutral;
   }
+
+  .tags-container {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .title-heading {
+    @apply text-4xl font-bold;
+  }
 }
 
 @layer utilities {
@@ -136,6 +144,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

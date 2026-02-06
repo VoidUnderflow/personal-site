@@ -1,5 +1,6 @@
 import { Post } from "@/data/posts/posts";
 import Link from "next/link";
+import { PostTag } from "./PostTag";
 
 interface PostCardProps {
   post: Post;
@@ -7,18 +8,31 @@ interface PostCardProps {
 
 export function PostCard({ post }: PostCardProps) {
   return (
-    <article key={post.slug} className="">
-      <h2>
-        <Link href={`/posts/${post.slug}`}>{post.title}</Link>
-      </h2>
-      <p>{post.description}</p>
-      <time dateTime={post.date}>{post.date}</time>
-      <div>
-        {post.tags.map((tag) => (
-          <Link key={tag} href={`/posts/tag/${tag}`}>
-            {tag}
-          </Link>
-        ))}
+    <article key={post.slug} className="flex gap-4 rounded-xl py-2">
+      {/* Date */}
+      <div className="pl-2">
+        <time className="text-lg text-primary" dateTime={post.date}>
+          {post.date}
+        </time>
+      </div>
+
+      {/* Title + Description + Tags */}
+      <div className="flex flex-col gap-2">
+        {/* Title */}
+        <h2
+          className="text-lg font-bold underline decoration-primary decoration-2
+            hover:text-primary"
+        >
+          <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+        </h2>
+        {/* Description */}
+        <p>{post.description}</p>
+        {/* Tags */}
+        <div className="tags-container">
+          {post.tags.map((tag) => (
+            <PostTag tag={tag} key={tag} />
+          ))}
+        </div>
       </div>
     </article>
   );
