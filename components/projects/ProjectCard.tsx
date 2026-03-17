@@ -12,7 +12,6 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="relative mx-auto w-full max-w-sm pt-0">
-      <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
       <Image src={project.image} alt={project.title} width={400} height={300} />
       <CardHeader>
         <CardTitle>
