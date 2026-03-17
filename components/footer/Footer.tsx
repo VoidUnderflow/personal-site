@@ -30,7 +30,7 @@ export default function Footer({ className }: FooterProps) {
             <li aria-hidden="true">
               <Separator
                 orientation="vertical"
-                className="h-4 w-0.5 bg-primary"
+                className="bg-primary h-4 w-0.5"
               />
             </li>
             <li>
@@ -47,7 +47,7 @@ export default function Footer({ className }: FooterProps) {
             <li aria-hidden="true">
               <Separator
                 orientation="vertical"
-                className="h-4 w-0.5 bg-secondary"
+                className="bg-secondary h-4 w-0.5"
               />
             </li>
             <li>
@@ -60,7 +60,7 @@ export default function Footer({ className }: FooterProps) {
             <li aria-hidden="true">
               <Separator
                 orientation="vertical"
-                className="h-4 w-0.5 bg-primary"
+                className="bg-primary h-4 w-0.5"
               />
             </li>
             <li>

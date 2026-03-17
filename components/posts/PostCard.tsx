@@ -11,7 +11,7 @@ export function PostCard({ post }: PostCardProps) {
     <article key={post.slug} className="flex gap-4 rounded-xl py-2">
       {/* Date */}
       <div className="pl-2">
-        <time className="text-lg text-primary" dateTime={post.date}>
+        <time className="text-primary text-lg" dateTime={post.date}>
           {post.date}
         </time>
       </div>
@@ -19,10 +19,7 @@ export function PostCard({ post }: PostCardProps) {
       {/* Title + Description + Tags */}
       <div className="flex flex-col gap-2">
         {/* Title */}
-        <h2
-          className="text-lg font-bold underline decoration-primary decoration-2
-            hover:text-primary"
-        >
+        <h2 className="decoration-primary hover:text-primary text-lg font-bold underline decoration-2">
           <Link href={`/posts/${post.slug}`}>{post.title}</Link>
         </h2>
         {/* Description */}

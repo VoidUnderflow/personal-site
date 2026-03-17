@@ -6,10 +6,7 @@ interface PostTagProps {
 
 export function PostTag({ tag }: PostTagProps) {
   return (
-    <div
-      className="border border-foreground hover:bg-foreground
-        hover:text-background rounded-lg px-2 mt-2"
-    >
+    <div className="border-foreground hover:bg-foreground hover:text-background mt-2 rounded-lg border px-2">
       <Link href={`/posts/tag/${tag}`}>{tag}</Link>
     </div>
   );

@@ -10,8 +10,7 @@ export default function NavLink({ href, color, children }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className={`block py-1 px-2 border-2 border-dashed border-x-transparent
-        border-t-transparent nav-link-${color} active:text-background`}
+      className={`block border-2 border-dashed border-x-transparent border-t-transparent px-2 py-1 nav-link-${color} active:text-background`}
     >
       {children}
     </Link>

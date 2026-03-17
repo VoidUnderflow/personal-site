@@ -32,7 +32,7 @@ export default function FloatyEmoji({
 
   return (
     <div
-      className="pointer-events-none fixed text-foreground text-xl"
+      className="text-foreground pointer-events-none fixed text-xl"
       style={{
         top: `${buttonRect.top}px`,
         left: `${buttonRect.right + 10}px`,
