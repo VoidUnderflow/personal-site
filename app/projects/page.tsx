@@ -1,5 +1,6 @@
 import ProjectCard from "@/components/projects/ProjectCard";
 import ProjectTagBadge from "@/components/projects/ProjectTagBadge";
+import { Separator } from "@/components/ui/separator";
 import { getAllProjects, getAllProjectTags } from "@/data/projects/projects";
 import { Metadata } from "next";
 
@@ -12,16 +13,17 @@ export default function ProjectsPage() {
   const tags = getAllProjectTags();
 
   return (
-    <div>
-      <h1>Lorem Ipsum Dolor</h1>
+    <div className="page-vertical-spacing">
+      <h1 className="title-heading">Projects</h1>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+        A collection of hobby projects I worked on - the main focus was to learn
+        new tools, languages, and have fun doing it. Unsure if there&apos;s
+        anything truly useful in here.
       </p>
 
-      <section>
-        <h2>Consectetur Adipiscing</h2>
-        <div>
+      <section className="flex flex-col gap-2">
+        <h2>Filter by tag: </h2>
+        <div className="flex gap-2">
           {tags.map((tag) => (
             <button key={tag}>
               <ProjectTagBadge tag={tag} />
@@ -30,9 +32,11 @@ export default function ProjectsPage() {
         </div>
       </section>
 
+      <Separator />
+
       <section>
         <h2>Sed Do Eiusmod</h2>
-        <div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}

@@ -5,7 +5,7 @@ import { PROJECT_TAGS, type ProjectTagId } from "@/data/projects/tags";
 
 export default function ProjectTagBadge({
   tag,
-  className = "w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10",
+  className = "w-6 h-6 md:w-8 md:h-8",
 }: {
   tag: ProjectTagId;
   className?: string;

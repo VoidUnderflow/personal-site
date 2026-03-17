@@ -13,7 +13,7 @@ export default function PostsPage() {
   const tags = getActivePostTags();
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="page-vertical-spacing">
       <h1 className="title-heading">Posts</h1>
 
       <Separator />

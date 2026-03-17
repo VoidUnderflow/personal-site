@@ -16,7 +16,7 @@ const projects: Project[] = [
     id: "neural-viz",
     title: "Lorem Ipsum Dolor",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Let's push this to the limit. A really really really really really really really really really really really really  long description.",
     githubUrl: "https://example.com",
     tags: ["Python", "TensorFlow", "React"],
     image: placeholderImage,

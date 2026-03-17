@@ -109,6 +109,10 @@
 }
 
 @layer components {
+  .page-vertical-spacing {
+    @apply flex flex-col gap-4;
+  }
+
   .nav-link-primary {
     @apply border-b-primary hover:border-primary! active:bg-primary;
   }
