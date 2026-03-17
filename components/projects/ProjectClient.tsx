@@ -6,6 +6,7 @@ import ProjectTagBadge from "./ProjectTagBadge";
 import ProjectCard from "./ProjectCard";
 import { useState } from "react";
 import clsx from "clsx";
+import { AnimatePresence, motion } from "motion/react";
 
 interface ProjectClientProps {
   projects: Project[];
@@ -50,8 +51,15 @@ export function ProjectClient({ projects, tags }: ProjectClientProps) {
           })}
         </div>
       </section>
-      <section>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTags.join(",")}
+          className="grid grid-cols-1 gap-8 md:grid-cols-2"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4 }}
+        >
           {projects
             .filter((project) =>
               activeTags.every((tag) => project.tags.includes(tag)),
@@ -59,8 +67,8 @@ export function ProjectClient({ projects, tags }: ProjectClientProps) {
             .map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
-        </div>
-      </section>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }
