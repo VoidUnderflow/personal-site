@@ -1,7 +1,11 @@
-import ProjectCard from "@/components/projects/ProjectCard";
-import ProjectTagBadge from "@/components/projects/ProjectTagBadge";
+import { ProjectClient } from "@/components/projects/ProjectClient";
 import { Separator } from "@/components/ui/separator";
-import { getAllProjects, getAllProjectTags } from "@/data/projects/projects";
+import {
+  getAllProjects,
+  getAllProjectTags,
+  Project,
+} from "@/data/projects/projects";
+import { ProjectTagId } from "@/data/projects/tags";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,8 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function ProjectsPage() {
-  const projects = getAllProjects();
-  const tags = getAllProjectTags();
+  const projects: Project[] = getAllProjects();
+  const tags: ProjectTagId[] = getAllProjectTags();
 
   return (
     <div className="page-vertical-spacing">
@@ -21,27 +25,9 @@ export default function ProjectsPage() {
         anything truly useful in here.
       </p>
 
-      <section className="flex flex-col gap-2">
-        <h2>Filter by tag: </h2>
-        <div className="flex gap-2">
-          {tags.map((tag) => (
-            <button key={tag}>
-              <ProjectTagBadge tag={tag} />
-            </button>
-          ))}
-        </div>
-      </section>
-
       <Separator />
 
-      <section>
-        <h2>Sed Do Eiusmod</h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
+      <ProjectClient projects={projects} tags={tags} />
     </div>
   );
 }
