@@ -16,7 +16,6 @@ export default function PostsPage() {
     <div className="page-vertical-spacing">
       <h1 className="title-heading">Posts</h1>
 
-      <Separator />
       <section className="flex gap-3">
         <p className="flex items-center">Filter posts by tag: </p>
         <div className="tags-container">
