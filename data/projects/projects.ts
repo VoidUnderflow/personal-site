@@ -49,6 +49,12 @@ export function getProjectsByTag(tag: ProjectTagId): Project[] {
   return projects.filter((p) => p.tags.includes(tag));
 }
 
+export function getProjectsByTags(tags: ProjectTagId[]): Project[] {
+  return projects.filter((project) =>
+    tags.every((tag) => project.tags.includes(tag)),
+  );
+}
+
 export function getAllProjectTags(): ProjectTagId[] {
   const tagSet = new Set<ProjectTagId>();
   projects.forEach((project) => {
