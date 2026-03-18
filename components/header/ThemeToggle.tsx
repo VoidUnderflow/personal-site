@@ -43,6 +43,7 @@ export default function ThemeToggle() {
               ref={buttonRef}
               onClick={handleToggle}
               aria-label="Toggle theme"
+              className="hover:cursor-pointer"
             >
               {theme === "dark" ? (
                 <span className="toggle-icon inline-flex">
