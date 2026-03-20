@@ -31,9 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      suppressHydrationWarning
       lang="en"
       className={`${audiowideFont.variable} ${rubikPixelsFont.variable}`}
+      suppressHydrationWarning
     >
       <body className="bg-background text-foreground font-base selection:text-background selection:bg-foreground antialiased">
         <ThemeProvider

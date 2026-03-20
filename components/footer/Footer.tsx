@@ -1,3 +1,5 @@
+"use client";
+
 import { GithubIcon } from "../icons/GithubIcon";
 import { LeetcodeIcon } from "../icons/LeetcodeIcon";
 import { LinkedinIcon } from "../icons/LinkedinIcon";
