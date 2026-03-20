@@ -1,8 +1,8 @@
 import PostsList from "@/components/posts/PostsList";
 import { getAllPosts, getActivePostTags } from "@/data/posts/posts";
 import { Metadata } from "next";
-import { PostTag } from "@/components/posts/PostTag";
 import { Separator } from "@/components/ui/separator";
+import { PostTagList } from "@/components/posts/PostTagList";
 
 export const metadata: Metadata = {
   title: "Posts",
@@ -19,11 +19,7 @@ export default function PostsPage() {
 
       <section className="flex gap-3">
         <p className="flex items-center">Filter posts by tag: </p>
-        <div className="tags-container">
-          {tags.map((tag) => (
-            <PostTag key={tag} tag={tag} />
-          ))}
-        </div>
+        <PostTagList tags={tags} />
       </section>
 
       <section>

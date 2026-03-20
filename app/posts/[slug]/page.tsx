@@ -2,6 +2,7 @@ import Comments from "@/components/posts/Comments";
 import { getPostBySlug, getAllPosts } from "@/data/posts/posts";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { PostTagList } from "@/components/posts/PostTagList";
 
 export async function generateMetadata({
   params,
@@ -36,16 +37,14 @@ export default async function PostPage({
   }
 
   return (
-    <article>
-      <header>
-        <h1>{post.title}</h1>
+    <article className="flex flex-col gap-4">
+      <header className="flex flex-col gap-1">
+        <h1 className="title-heading">{post.title}</h1>
+        <time className="text-muted-foreground italic" dateTime={post.date}>
+          {post.date}
+        </time>
         <p>{post.description}</p>
-        <time dateTime={post.date}>{post.date}</time>
-        <div>
-          {post.tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </div>
+        <PostTagList tags={post.tags} />
       </header>
 
       <div className="prose prose-lg">

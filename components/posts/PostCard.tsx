@@ -1,6 +1,6 @@
 import { Post } from "@/data/posts/posts";
 import Link from "next/link";
-import { PostTag } from "./PostTag";
+import { PostTagBadge } from "./PostTagBadge";
 
 interface PostCardProps {
   post: Post;
@@ -27,7 +27,7 @@ export function PostCard({ post }: PostCardProps) {
         {/* Tags */}
         <div className="tags-container">
           {post.tags.map((tag) => (
-            <PostTag tag={tag} key={tag} />
+            <PostTagBadge tag={tag} key={tag} />
           ))}
         </div>
       </div>
