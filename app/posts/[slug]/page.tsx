@@ -37,7 +37,7 @@ export default async function PostPage({
   }
 
   return (
-    <article className="flex flex-col gap-4">
+    <article className="flex flex-col gap-4 pb-2">
       <header className="flex flex-col gap-1">
         <h1 className="title-heading">{post.title}</h1>
         <time className="text-muted-foreground italic" dateTime={post.date}>
@@ -47,7 +47,7 @@ export default async function PostPage({
         <PostTagList tags={post.tags} />
       </header>
 
-      <div className="prose prose-lg">
+      <div className="prose prose-lg max-w-none">
         <Post />
       </div>
       <Comments />
