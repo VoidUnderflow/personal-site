@@ -1,5 +1,4 @@
 import type { MDXComponents } from "mdx/types";
-import Image, { ImageProps } from "next/image";
 
 export function SampleComponent({ children }: { children: React.ReactNode }) {
   return <div className="text-red-500">{children}</div>;
@@ -19,21 +18,6 @@ const components: MDXComponents = {
     <ul className="text-foreground [&_li::marker]:text-foreground text-md">
       {children}
     </ul>
-  ),
-  img: ({ alt, ...props }) => (
-    <figure className="flex flex-col items-center">
-      <Image
-        height={400}
-        width={400}
-        alt={alt ?? ""}
-        {...(props as Omit<ImageProps, "alt">)}
-      />
-      {alt && (
-        <figcaption className="text-muted-foreground text-center text-sm">
-          {alt}
-        </figcaption>
-      )}
-    </figure>
   ),
   MyComponent: SampleComponent,
 };
