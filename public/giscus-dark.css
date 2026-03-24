@@ -1,0 +1,137 @@
+/*!
+ * Dark theme for the Giscus embed.
+ * Adapted from the GitHub Dark theme, MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+main {
+  /* Syntax — kept as-is */
+  --color-prettylights-syntax-comment: #8b949e;
+  --color-prettylights-syntax-constant: #79c0ff;
+  --color-prettylights-syntax-entity: #d2a8ff;
+  --color-prettylights-syntax-storage-modifier-import: #c9d1d9;
+  --color-prettylights-syntax-entity-tag: #7ee787;
+  --color-prettylights-syntax-keyword: #ff7b72;
+  --color-prettylights-syntax-string: #a5d6ff;
+  --color-prettylights-syntax-variable: #ffa657;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #f85149;
+  --color-prettylights-syntax-invalid-illegal-text: #f2ecca;
+  --color-prettylights-syntax-invalid-illegal-bg: #8e1519;
+  --color-prettylights-syntax-carriage-return-text: #f2ecca;
+  --color-prettylights-syntax-carriage-return-bg: #b62324;
+  --color-prettylights-syntax-string-regexp: #7ee787;
+  --color-prettylights-syntax-markup-list: #f2cc60;
+  --color-prettylights-syntax-markup-heading: #825593;
+  --color-prettylights-syntax-markup-italic: #f2ecca;
+  --color-prettylights-syntax-markup-bold: #f2ecca;
+  --color-prettylights-syntax-markup-deleted-text: #ffdcd7;
+  --color-prettylights-syntax-markup-deleted-bg: #67060c;
+  --color-prettylights-syntax-markup-inserted-text: #aff5b4;
+  --color-prettylights-syntax-markup-inserted-bg: #033a16;
+  --color-prettylights-syntax-markup-changed-text: #ffdfb6;
+  --color-prettylights-syntax-markup-changed-bg: #5a1e02;
+  --color-prettylights-syntax-markup-ignored-text: #f2ecca;
+  --color-prettylights-syntax-markup-ignored-bg: #45547f;
+  --color-prettylights-syntax-meta-diff-range: #d2a8ff;
+  --color-prettylights-syntax-brackethighlighter-angle: #b8a888;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #333333;
+  --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+
+  /* Buttons */
+  --color-btn-text: #f2ecca;
+  --color-btn-bg: #1a1a1a;
+  --color-btn-border: #f2ecca1a;
+  --color-btn-shadow: 0 0 #0000;
+  --color-btn-inset-shadow: 0 0 #0000;
+  --color-btn-hover-bg: #333333;
+  --color-btn-hover-border: #b8a888;
+  --color-btn-active-bg: #1a1a1a;
+  --color-btn-active-border: #b8a888;
+  --color-btn-selected-bg: #000000;
+  --color-btn-primary-text: #f2ecca;
+  --color-btn-primary-bg: #825593;
+  --color-btn-primary-border: #f2ecca1a;
+  --color-btn-primary-shadow: 0 0 #0000;
+  --color-btn-primary-inset-shadow: 0 0 #0000;
+  --color-btn-primary-hover-bg: #9b6aaf;
+  --color-btn-primary-hover-border: #f2ecca1a;
+  --color-btn-primary-selected-bg: #825593;
+  --color-btn-primary-selected-shadow: 0 0 #0000;
+  --color-btn-primary-disabled-text: #f2ecca80;
+  --color-btn-primary-disabled-bg: #82559399;
+  --color-btn-primary-disabled-border: #f2ecca1a;
+
+  --color-action-list-item-default-hover-bg: #f2ecca1f;
+  --color-segmented-control-bg: #33333366;
+  --color-segmented-control-button-bg: #000000;
+  --color-segmented-control-button-selected-border: #333333;
+
+  /* Foreground */
+  --color-fg-default: #f2ecca;
+  --color-fg-muted: #b8a888;
+  --color-fg-subtle: #b8a888;
+
+  /* Canvas */
+  --color-canvas-default: #000000;
+  --color-canvas-overlay: #1a1a1a;
+  --color-canvas-inset: #000000;
+  --color-canvas-subtle: #1a1a1a;
+
+  /* Borders */
+  --color-border-default: #333333;
+  --color-border-muted: #1a1a1a;
+  --color-neutral-muted: #33333366;
+
+  /* Accents — site primary purple */
+  --color-accent-fg: #825593;
+  --color-accent-emphasis: #825593;
+  --color-accent-muted: #82559366;
+  --color-accent-subtle: #8255931a;
+
+  /* Functional — keep */
+  --color-success-fg: #3fb950;
+  --color-attention-fg: #d29922;
+  --color-attention-muted: #bb800966;
+  --color-attention-subtle: #bb800926;
+  --color-danger-fg: #f85149;
+  --color-danger-muted: #f8514966;
+  --color-danger-subtle: #f851491a;
+
+  --color-primer-shadow-inset: 0 0 #0000;
+  --color-scale-gray-7: #1a1a1a;
+  --color-scale-blue-8: #45547f;
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+}
+main .pagination-loader-container {
+  background-image: url(https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg);
+}
+main .gsc-loading-image {
+  background-image: url(https://github.githubassets.com/images/mona-loading-dark.gif);
+}
+
+/*! Custom CSS */
+.gsc-reactions-count {
+  display: none;
+}
+.gsc-timeline {
+  flex-direction: column-reverse;
+}
+.gsc-header {
+  padding-bottom: 1rem;
+}
+.gsc-comments > .gsc-header {
+  order: 1;
+}
+.gsc-comments > .gsc-comment-box {
+  margin-bottom: 1rem;
+  order: 2;
+}
+.gsc-comments > .gsc-timeline {
+  order: 3;
+}
+.gsc-homepage-bg {
+  background-color: #000000;
+}

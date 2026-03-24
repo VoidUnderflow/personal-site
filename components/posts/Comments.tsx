@@ -1,7 +1,16 @@
 "use client";
 import Giscus from "@giscus/react";
+import { useTheme } from "next-themes";
+
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export default function Comments() {
+  const { resolvedTheme } = useTheme();
+  const theme =
+    resolvedTheme === "light"
+      ? `${baseUrl}/giscus-light.css`
+      : `${baseUrl}/giscus-dark.css`;
+
   return (
     <Giscus
       repo="VoidUnderflow/personal-site"
@@ -13,7 +22,7 @@ export default function Comments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"
-      theme={"dark"}
+      theme={theme}
       lang="en"
       loading="lazy"
     />
