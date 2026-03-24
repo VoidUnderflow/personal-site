@@ -50,7 +50,9 @@ export default async function PostPage({
       <div className="prose prose-lg max-w-none">
         <Post />
       </div>
-      <Comments />
+      <div className="mx-1">
+        <Comments />
+      </div>
     </article>
   );
 }
