@@ -18,7 +18,7 @@ export default function Comments() {
       category="General"
       categoryId="DIC_kwDOQGtY6M4C0URM"
       mapping="pathname"
-      strict="1"
+      strict="0"
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="bottom"
