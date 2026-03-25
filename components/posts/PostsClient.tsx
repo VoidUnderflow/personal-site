@@ -45,12 +45,12 @@ export function PostsClient({ posts, tags }: PostsClientProps) {
         >
           {posts
             .filter((post) =>
-              activeTags.every((activeTag) => post.tags.includes(activeTag))
+              activeTags.every((activeTag) => post.tags.includes(activeTag)),
             )
             .map((post, index, filtered) => (
               <React.Fragment key={post.slug}>
                 <PostCard post={post} />
-                {index < filtered.length - 1 && <Separator />}
+                {index < filtered.length - 1 && <Separator dotted />}
               </React.Fragment>
             ))}
         </motion.div>

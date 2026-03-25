@@ -9,16 +9,26 @@ function Separator({
   className,
   orientation = "horizontal",
   decorative = true,
+  dotted = false,
   ...props
-}: React.ComponentProps<typeof SeparatorPrimitive.Root>) {
+}: React.ComponentProps<typeof SeparatorPrimitive.Root> & {
+  dotted?: boolean;
+}) {
   return (
     <SeparatorPrimitive.Root
       data-slot="separator"
       decorative={decorative}
       orientation={orientation}
       className={cn(
-        "bg-primary-foreground shrink-0",
-        orientation === "horizontal" ? "h-px w-full" : "h-full w-px",
+        "shrink-0",
+        dotted
+          ? orientation === "horizontal"
+            ? "border-foreground h-px w-full border-t border-dashed bg-transparent"
+            : "border-foreground h-full w-px border-l border-dashed bg-transparent"
+          : [
+              "bg-foreground",
+              orientation === "horizontal" ? "h-px w-full" : "h-full w-px",
+            ],
         className,
       )}
       {...props}
