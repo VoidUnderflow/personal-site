@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Audiowide, Rubik_Lines } from "next/font/google";
 import "./globals.css";
-import "highlight.js/styles/tokyo-night-dark.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { ThemeProvider } from "next-themes";
