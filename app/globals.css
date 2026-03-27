@@ -153,3 +153,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* rehype-pretty-code dual theme
+  (controls how <code> blocks look)
+*/
+.prose pre[data-theme*=" "] {
+  border: 2px dashed var(--foreground);
+}
+
+pre[data-theme*=" "],
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--background);
+}
+
+.dark pre[data-theme*=" "],
+.dark code[data-theme*=" "],
+.dark code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+  background-color: var(--shiki-dark-bg);
+}
