@@ -43,7 +43,7 @@ export default function RootLayout({
         >
           <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-6 md:px-12">
             <Header className="my-8" />
-            <main className="flex-1">{children}</main>
+            <main className="mt-10 flex-1">{children}</main>
             <Footer className="bg-background sticky bottom-0 flex h-10 items-center justify-center" />
           </div>
         </ThemeProvider>
