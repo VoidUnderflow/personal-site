@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { ThemeProvider } from "next-themes";
+import Background from "@/components/background/Background";
 
 // Fonts
 const rubikPixelsFont = Rubik_Lines({
@@ -34,17 +35,18 @@ export default function RootLayout({
       className={`${audiowideFont.variable} ${rubikPixelsFont.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground font-base selection:text-background selection:bg-foreground antialiased">
+      <body className="text-foreground font-base selection:text-background selection:bg-foreground antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col px-6 md:px-12">
+          <Background />
+          <div className="bg-background mx-auto my-6 flex min-h-screen w-full max-w-4xl flex-col rounded-md px-6 md:px-12">
             <Header className="my-8" />
             <main className="mt-10 flex-1">{children}</main>
-            <Footer className="bg-background sticky bottom-0 flex h-10 items-center justify-center" />
+            <Footer className="sticky bottom-0 flex h-10 items-center justify-center" />
           </div>
         </ThemeProvider>
       </body>
