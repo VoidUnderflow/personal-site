@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { PostTagList } from "@/components/posts/PostTagList";
 import Link from "next/link";
+import { ScrollProgressBar } from "@/components/header/ScrollProgressBar";
 
 export async function generateMetadata({
   params,
@@ -39,6 +40,7 @@ export default async function PostPage({
 
   return (
     <article className="flex flex-col gap-4 pb-2">
+      <ScrollProgressBar />
       <header className="flex flex-col gap-1">
         <h1 className="title-heading">{post.title}</h1>
         <time className="text-muted-foreground italic" dateTime={post.date}>
