@@ -8,13 +8,9 @@ import { Separator } from "@/components/ui/separator";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import IconTooltip from "./IconTooltip";
 
-interface FooterProps {
-  className: string;
-}
-
-export default function Footer({ className }: FooterProps) {
+export default function Footer() {
   return (
-    <footer className={className}>
+    <footer className="bg-background sticky bottom-0 my-2 flex h-10 items-center justify-center">
       <div>
         <TooltipProvider>
           <ul className="flex items-center gap-4">

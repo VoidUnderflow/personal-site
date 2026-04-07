@@ -46,7 +46,7 @@ export default function RootLayout({
           <div className="bg-background mx-auto my-6 flex min-h-screen w-full max-w-4xl flex-col rounded-md px-6 md:px-12">
             <Header className="my-8" />
             <main className="mt-10 flex-1">{children}</main>
-            <Footer className="sticky bottom-0 flex h-10 items-center justify-center" />
+            <Footer />
           </div>
         </ThemeProvider>
       </body>
