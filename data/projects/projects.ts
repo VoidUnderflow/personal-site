@@ -1,5 +1,14 @@
 import { StaticImageData } from "next/image";
-import placeholderImage from "./placeholder.jpg";
+import electronProgress from "./images/electron-progress-tracker.png";
+import voidUnderflow from "./images/voidunderflow.png";
+import reactAndNext from "./images/react-and-next-practice.png";
+import strawberryApi from "./images/strawberry-api.png";
+import dsa from "./images/dsa.png";
+import miscFractal from "./images/misc_fractal.png";
+import mlPractice from "./images/ml-practice.png";
+import tailwindPractice from "./images/tailwind-practice.png";
+import frontendFundamentals from "./images/frontend-fundamentals.png";
+import drfRecipes from "./images/drf-recipes.png";
 import { ProjectTagId } from "./tags";
 
 export interface Project {
@@ -13,31 +22,101 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    id: "neural-viz",
-    title: "Lorem Ipsum Dolor",
+    id: "electron-progress-tracker",
+    title: "Electron Progress Tracker",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Let's push this to the limit. A really really really really really really really really really really really really  long description.",
-    githubUrl: "https://example.com",
-    tags: ["Python", "TensorFlow", "React"],
-    image: placeholderImage,
+      "Desktop app for tracking goals through progress bars. Has Dropbox cloud back-ups, customisable sounds and themes, and notes.",
+    githubUrl: "https://github.com/VoidUnderflow/electron-progress-tracker",
+    tags: ["React", "TailwindCSS", "TypeScript"],
+    image: electronProgress,
   },
   {
-    id: "task-queue",
-    title: "Consectetur Adipiscing",
+    id: "personal-website",
+    title: "voidunderflow.com",
     description:
-      "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    githubUrl: "https://example.com",
-    tags: ["Go", "Redis", "Docker", "Kubernetes"],
-    image: placeholderImage,
+      "This website. Made with Next.js and hosted on Vercel. Uses Giscus for discussions and MDX for displaying posts.",
+    githubUrl: "https://github.com/VoidUnderflow/personal-site",
+    tags: ["NextJS", "TailwindCSS", "TypeScript", "MDX"],
+    image: voidUnderflow,
   },
   {
-    id: "md-blog",
-    title: "Sed Do Eiusmod",
+    id: "learning-react-and-next",
+    title: "React and NextJS practice",
     description:
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    githubUrl: "https://example.com",
-    tags: ["TypeScript", "NextJS", "MDX", "TailwindCSS"],
-    image: placeholderImage,
+      "Various small React projects that put together go through most of its features and use",
+    githubUrl: "https://github.com/VoidUnderflow/learning-react-and-next",
+    tags: [
+      "NextJS",
+      "React",
+      "TailwindCSS",
+      "TypeScript",
+      "Docker",
+      "Postgres",
+    ],
+    image: reactAndNext,
+  },
+  {
+    id: "strawberry-job-board-api",
+    title: "Strawberry GraphQL job board API",
+    description:
+      "A practice GraphQL API using Strawberry, FastAPI, and SQLAlchemy. Has JWT-based auth, roles, and >90% test coverage.",
+    githubUrl: "https://github.com/VoidUnderflow/strawberry-job-board-api",
+    tags: ["FastAPI", "GraphQL", "Postgres", "Docker", "Python", "PyTest"],
+    image: strawberryApi,
+  },
+  {
+    id: "algorithms-and-data-structures",
+    title: "Algorithms and Data Structures",
+    description:
+      "Algo practice in Python and TypeScript - LeetCode problems, Advent of Code, and some theory.",
+    githubUrl:
+      "https://github.com/VoidUnderflow/algorithms-and-data-structures",
+    tags: ["Python", "TypeScript"],
+    image: dsa,
+  },
+  {
+    id: "miscellaneous-projects",
+    title: "Miscellaneous Projects",
+    description:
+      "Various tutorials, university projects, and experiments with different languages and tools.",
+    githubUrl: "https://github.com/VoidUnderflow/miscellaneous-projects",
+    tags: ["Python", "Java", "Rust", "Haskell"],
+    image: miscFractal,
+  },
+  {
+    id: "ml-practice",
+    title: "ML Practice",
+    description:
+      "Machine Learning tutorials, experiments, and university coursework.",
+    githubUrl: "https://github.com/VoidUnderflow/ml-practice",
+    tags: ["Python", "PyTorch"],
+    image: mlPractice,
+  },
+  {
+    id: "frontend-fundamentals",
+    title: "Frontend Fundamentals",
+    description:
+      "Refreshing CSS knowledge and learning JS with exercises from The Odin Project, MDN, and others.",
+    githubUrl: "https://github.com/VoidUnderflow/frontend-fundamentals",
+    tags: ["JavaScript"],
+    image: frontendFundamentals,
+  },
+  {
+    id: "drf-recipes",
+    title: "Django Rest Framework - Recipes API",
+    description:
+      "Practice API with a focus on testing (built with TDD - 99% coverage). Has CI with GitHub Actions, JWT auth.",
+    githubUrl: "https://github.com/VoidUnderflow/drf-recipes-practice-api",
+    tags: ["Django", "Docker", "Postgres"],
+    image: drfRecipes,
+  },
+  {
+    id: "tailwind-practice",
+    title: "Tailwind Practice",
+    description: "Learning Tailwind basics through FrontendMentor challenges.",
+    githubUrl: "https://github.com/VoidUnderflow/tailwind-practice",
+    tags: ["TailwindCSS", "JavaScript"],
+    image: tailwindPractice,
   },
 ];
 

@@ -29,7 +29,7 @@ export function ProjectClient({ projects, tags }: ProjectClientProps) {
       {" "}
       <section className="flex flex-col gap-2">
         <h2>Filter by tag (click to toggle): </h2>
-        <div className="flex gap-2">
+        <div className="flex gap-2.5">
           {tags.map((tag) => {
             const isActive = activeTags.includes(tag);
 
