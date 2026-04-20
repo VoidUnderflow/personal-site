@@ -1,14 +1,27 @@
 import type { MDXComponents } from "mdx/types";
+import Link from "next/link";
 
 export function SampleComponent({ children }: { children: React.ReactNode }) {
   return <div className="text-red-500">{children}</div>;
 }
 
 const components: MDXComponents = {
-  h1: ({ children }) => <h1 className="text-foreground">{children}</h1>,
-  h2: ({ children }) => <h2 className="text-secondary">{children}</h2>,
-  h3: ({ children }) => <h3 className="text-tertiary">{children}</h3>,
-  p: ({ children }) => <p className="text-foreground text-md">{children}</p>,
+  h1: ({ children }) => (
+    <h1 className="text-foreground text-[1.5rem] underline decoration-dashed">
+      {children}
+    </h1>
+  ),
+  h2: ({ children }) => (
+    <h2 className="text-foreground text-[1.4rem] underline">{children}</h2>
+  ),
+  h3: ({ children }) => (
+    <h3 className="text-foreground text-[1.3rem] underline decoration-double">
+      {children}
+    </h3>
+  ),
+  p: ({ children }) => (
+    <p className="text-foreground text-[1.05rem]">{children}</p>
+  ),
   ol: ({ children }) => (
     <ol className="text-foreground [&_li::marker]:text-foreground text-md">
       {children}
@@ -18,6 +31,14 @@ const components: MDXComponents = {
     <ul className="text-foreground [&_li::marker]:text-foreground text-md">
       {children}
     </ul>
+  ),
+  a: ({ children, href }) => (
+    <Link href={href} className="text-secondary visited:text-primary">
+      {children}
+    </Link>
+  ),
+  strong: ({ children }) => (
+    <strong className="text-foreground">{children}</strong>
   ),
   MyComponent: SampleComponent,
 };

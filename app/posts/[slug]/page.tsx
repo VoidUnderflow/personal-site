@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import { PostTagList } from "@/components/posts/PostTagList";
 import Link from "next/link";
 import { ScrollProgressBar } from "@/components/header/ScrollProgressBar";
+import { Separator } from "@/components/ui/separator";
 
 export async function generateMetadata({
   params,
@@ -39,7 +40,7 @@ export default async function PostPage({
   }
 
   return (
-    <article className="flex flex-col gap-4 pb-2">
+    <article className="flex flex-col gap-8 pb-2">
       <ScrollProgressBar />
       <header className="flex flex-col gap-1">
         <h1 className="title-heading">{post.title}</h1>
@@ -50,7 +51,9 @@ export default async function PostPage({
         <PostTagList tags={post.tags} />
       </header>
 
-      <div className="prose prose-lg max-w-none">
+      <Separator />
+
+      <div className="prose prose-lg max-w-none px-16">
         <Post />
       </div>
       <div className="mx-1">

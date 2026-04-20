@@ -15,18 +15,10 @@ export interface Post {
 const posts: Post[] = [
   {
     slug: "welcome",
-    title: "Welcome to my blog",
-    description: "Short introduction",
-    date: "2025-12-27",
+    title: "Welcome",
+    description: "Short introduction and a few words about this website",
+    date: "2025-04-16",
     tags: [PostTag.Meta, PostTag.Introduction],
-  },
-  {
-    slug: "on-memory",
-    title: "On memory",
-    description:
-      "Some musings about how my memory is changing as I'm getting older",
-    date: "2025-12-26",
-    tags: [PostTag.Meta, PostTag.Personal],
   },
 ];
 
