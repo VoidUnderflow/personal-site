@@ -40,7 +40,7 @@ export default async function PostPage({
   }
 
   return (
-    <article className="flex flex-col gap-8 pb-2">
+    <article className="page-vertical-spacing">
       <ScrollProgressBar />
       <header className="flex flex-col gap-1">
         <h1 className="title-heading">{post.title}</h1>
