@@ -152,6 +152,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  a {
+    @apply text-secondary visited:text-primary;
+  }
 }
 
 /* rehype-pretty-code dual theme
