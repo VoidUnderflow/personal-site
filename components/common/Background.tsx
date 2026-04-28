@@ -1,5 +1,8 @@
 import xv from "@/public/xv.png";
 
+/**
+ * Website background.
+ */
 export default function Background() {
   return (
     <div

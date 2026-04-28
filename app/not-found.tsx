@@ -1,4 +1,4 @@
-import { BackButton } from "@/components/error/BackButton";
+import { BackButton } from "@/components/common/BackButton";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

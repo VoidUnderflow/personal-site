@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import { ThemeProvider } from "next-themes";
-import Background from "@/components/background/Background";
+import Background from "@/components/common/Background";
 
 // Fonts
 const rubikPixelsFont = Rubik_Lines({
