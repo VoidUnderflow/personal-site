@@ -10,6 +10,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
 import { HeroHorizontal } from "./HeroHorizontal";
 import { HeroVertical } from "./HeroVertical";
+import { useMounted } from "@/hooks/useMounted";
 
 // TODO: Fix hydration errors - unclear if they only happen when resizing with devtools.
 // TODO: Replace placeholder images.
@@ -64,6 +65,9 @@ export function HeroAnimation() {
 
   const bgX = useMotionValue(0);
   const bgY = useMotionValue(0);
+
+  // Avoid (theme + SSR) - related hydration errors.
+  const mounted = useMounted();
 
   useAnimationFrame((time) => {
     // TODO: Can have different bg coordinates for the SVGs.
@@ -121,6 +125,7 @@ export function HeroAnimation() {
     };
   }, [animate, groupOpacity, voidFontSize]);
 
+  if (!mounted) return null;
   // TODO: Not rendering anything on light mode.
   if (resolvedTheme !== "dark") return null;
 

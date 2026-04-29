@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { Icon } from "@iconify/react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import FloatyEmoji from "./FloatyEmoji";
 import {
   Tooltip,
@@ -10,26 +10,17 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useMounted } from "@/hooks/useMounted";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const [floaty, setFloaty] = useState<{
     emoji: string;
     rect: DOMRect;
     key: number;
   } | null>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-
-  // Hack to prevent hydration warning.
-  // Before hydration, theme is undefined => defaults to light mode.
-  // After hydration, theme becomes the saved value (e.g: dark).
-  // Mismatch => error.
-  // See Readme: https://github.com/pacocoursey/next-themes.
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setMounted(true);
-  }, []);
 
   const handleToggle = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
