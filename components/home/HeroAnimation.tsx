@@ -127,7 +127,7 @@ export function HeroAnimation() {
 
   if (!mounted) return null;
   // TODO: Not rendering anything on light mode.
-  if (resolvedTheme !== "dark") return null;
+  // if (resolvedTheme !== "dark") return null;
 
   const voidImage = isFinal ? finalImages.void : pairs[currentIdx].voidImage;
   const underflowImage = isFinal

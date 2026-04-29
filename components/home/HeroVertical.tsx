@@ -81,13 +81,13 @@ export function HeroVertical({
         />
       </motion.g>
 
+      {/* TODO: Consider making all those motion.texts into a re-usable component. */}
       <motion.text
         {...baseTextProps}
         y="35%"
         fill="none"
-        stroke="white"
         strokeWidth={1.5}
-        style={{ fontSize: voidFontSize }}
+        style={{ fontSize: voidFontSize, stroke: "var(--foreground)" }}
       >
         VOID
       </motion.text>
@@ -96,7 +96,7 @@ export function HeroVertical({
         {...baseTextProps}
         y="85%"
         fill="none"
-        stroke="white"
+        style={{ stroke: "var(--foreground)" }}
         strokeWidth={1.5}
       >
         UNDERFLOW

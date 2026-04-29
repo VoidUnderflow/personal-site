@@ -51,7 +51,7 @@ export function HeroHorizontal({
             {...baseTextProps}
             x={SPLIT_X}
             textAnchor="end"
-            fill="white"
+            fill="currentColor"
             style={{ fontSize: voidFontSize }}
           >
             VOID
@@ -87,9 +87,8 @@ export function HeroHorizontal({
         x={SPLIT_X}
         textAnchor="end"
         fill="none"
-        stroke="white"
         strokeWidth={1.5}
-        style={{ fontSize: voidFontSize }}
+        style={{ stroke: "var(--foreground)", fontSize: voidFontSize }}
       >
         VOID
       </motion.text>
@@ -99,7 +98,7 @@ export function HeroHorizontal({
         x={SPLIT_X}
         textAnchor="start"
         fill="none"
-        stroke="white"
+        style={{ stroke: "var(--foreground)" }}
         strokeWidth={1.5}
       >
         UNDERFLOW
