@@ -157,7 +157,7 @@ export function HeroAnimation() {
       />
       <motion.p
         style={{ opacity: groupOpacity }}
-        className="max-w-xl text-center text-sm text-white/70 italic"
+        className="text-foreground/70 max-w-xl text-center text-sm italic"
       >
         {verse}
       </motion.p>
