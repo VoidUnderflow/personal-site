@@ -138,7 +138,7 @@ export function HeroAnimation() {
   return (
     <div className="flex w-full flex-col items-center gap-8">
       <HeroVertical
-        className="md:hidden"
+        className="select-none md:hidden"
         voidImageHref={voidImage}
         underflowImageHref={underflowImage}
         bgX={bgX}
@@ -147,7 +147,7 @@ export function HeroAnimation() {
         voidFontSize={voidFontSize}
       />
       <HeroHorizontal
-        className="hidden md:block"
+        className="hidden select-none md:block"
         voidImageHref={voidImage}
         underflowImageHref={underflowImage}
         bgX={bgX}
