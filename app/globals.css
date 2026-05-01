@@ -142,6 +142,10 @@
   .toggle-icon {
     @apply text-foreground border-background hover:border-foreground rounded-full border-2 p-1;
   }
+
+  .hero-quote {
+    @apply text-foreground/70 max-w-xl text-center text-sm italic;
+  }
 }
 
 @layer base {
