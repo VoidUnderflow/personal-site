@@ -1,15 +1,20 @@
 import { motion, MotionValue } from "motion/react";
 
-interface Props {
-  voidImageHref: string;
-  underflowImageHref: string;
-  bgX: MotionValue<number>;
-  bgY: MotionValue<number>;
-  groupOpacity: MotionValue<number>;
-  voidFontSize: MotionValue<number>;
+type Props = {
   className?: string;
   layout: "horizontal" | "vertical";
-}
+} & (
+  | { staticMode: true }
+  | {
+      staticMode?: false;
+      voidImageHref: string;
+      underflowImageHref: string;
+      bgX: MotionValue<number>;
+      bgY: MotionValue<number>;
+      groupOpacity: MotionValue<number>;
+      voidFontSize: MotionValue<number>;
+    }
+);
 
 const FONT_SIZE = 128;
 
@@ -38,24 +43,43 @@ const layouts = {
   },
 };
 
-export function HeroSvg({
-  voidImageHref,
-  underflowImageHref,
-  bgX,
-  bgY,
-  groupOpacity,
-  voidFontSize,
-  className,
-  layout,
-}: Props) {
+export function HeroSvg(props: Props) {
+  const { className, layout } = props;
   const config = layouts[layout];
+
+  if (props.staticMode) {
+    return (
+      <svg
+        width="100%"
+        viewBox={config.viewBox}
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+      >
+        <text {...baseTextProps} {...config.void} fill="currentColor">
+          VOID
+        </text>
+        <text {...baseTextProps} {...config.underflow} fill="currentColor">
+          UNDERFLOW
+        </text>
+      </svg>
+    );
+  }
+
+  const {
+    voidImageHref,
+    underflowImageHref,
+    bgX,
+    bgY,
+    groupOpacity,
+    voidFontSize,
+  } = props;
 
   return (
     <svg
       width="100%"
       viewBox={config.viewBox}
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={`select-none ${className}`}
     >
       <defs>
         <mask id={config.maskIds.void}>
@@ -78,7 +102,10 @@ export function HeroSvg({
         </mask>
       </defs>
 
-      <motion.g mask={`url(#${config.maskIds.void})`} style={{ opacity: groupOpacity }}>
+      <motion.g
+        mask={`url(#${config.maskIds.void})`}
+        style={{ opacity: groupOpacity }}
+      >
         <motion.image
           href={voidImageHref}
           {...config.image}
@@ -86,7 +113,10 @@ export function HeroSvg({
         />
       </motion.g>
 
-      <motion.g mask={`url(#${config.maskIds.underflow})`} style={{ opacity: groupOpacity }}>
+      <motion.g
+        mask={`url(#${config.maskIds.underflow})`}
+        style={{ opacity: groupOpacity }}
+      >
         <motion.image
           href={underflowImageHref}
           {...config.image}

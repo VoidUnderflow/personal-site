@@ -6,9 +6,7 @@ import {
   useAnimationFrame,
   useMotionValue,
 } from "motion/react";
-import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
-import { useMounted } from "@/hooks/useMounted";
 import { HeroSvg } from "./HeroSvg";
 
 // TODO: Fix hydration errors - unclear if they only happen when resizing with devtools.
@@ -49,8 +47,7 @@ const finalImages = {
 const FINAL_VERSE =
   "And that makes me happy. For it says that no matter how hard the world pushes against me, within me, there's something stronger — something better, pushing right back.";
 
-export function HeroAnimation() {
-  const { resolvedTheme } = useTheme();
+export function AnimatedHero() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isFinal, setIsFinal] = useState(false);
 
@@ -64,9 +61,6 @@ export function HeroAnimation() {
 
   const bgX = useMotionValue(0);
   const bgY = useMotionValue(0);
-
-  // Avoid (theme + SSR) - related hydration errors.
-  const mounted = useMounted();
 
   useAnimationFrame((time) => {
     // TODO: Can have different bg coordinates for the SVGs.
@@ -124,10 +118,6 @@ export function HeroAnimation() {
     };
   }, [animate, groupOpacity, voidFontSize]);
 
-  if (!mounted) return null;
-  // TODO: Not rendering anything on light mode.
-  // if (resolvedTheme !== "dark") return null;
-
   const voidImage = isFinal ? finalImages.void : pairs[currentIdx].voidImage;
   const underflowImage = isFinal
     ? finalImages.underflow
@@ -135,9 +125,9 @@ export function HeroAnimation() {
   const verse = isFinal ? FINAL_VERSE : pairs[currentIdx].verse;
 
   return (
-    <div className="flex w-full flex-col items-center gap-8">
+    <>
       <HeroSvg
-        className="select-none md:hidden"
+        className="md:hidden"
         voidImageHref={voidImage}
         underflowImageHref={underflowImage}
         bgX={bgX}
@@ -147,7 +137,7 @@ export function HeroAnimation() {
         layout="vertical"
       />
       <HeroSvg
-        className="hidden select-none md:block"
+        className="hidden md:block"
         voidImageHref={voidImage}
         underflowImageHref={underflowImage}
         bgX={bgX}
@@ -156,12 +146,9 @@ export function HeroAnimation() {
         voidFontSize={voidFontSize}
         layout="horizontal"
       />
-      <motion.p
-        style={{ opacity: groupOpacity }}
-        className="text-foreground/70 max-w-xl text-center text-sm italic"
-      >
+      <motion.p style={{ opacity: groupOpacity }} className="hero-quote">
         {verse}
       </motion.p>
-    </div>
+    </>
   );
 }
