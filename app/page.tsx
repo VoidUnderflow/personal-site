@@ -1,4 +1,4 @@
-import { HeroAnimation } from "@/components/home/HeroAnimation";
+import { HeroAnimation } from "@/components/home/hero/HeroAnimation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
