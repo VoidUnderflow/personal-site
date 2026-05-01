@@ -51,7 +51,7 @@ export function HeroHorizontal({
             {...baseTextProps}
             x={SPLIT_X}
             textAnchor="end"
-            fill="currentColor"
+            fill="white"
             style={{ fontSize: voidFontSize }}
           >
             VOID
