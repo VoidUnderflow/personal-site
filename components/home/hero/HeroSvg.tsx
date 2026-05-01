@@ -1,4 +1,5 @@
 import { motion, MotionValue } from "motion/react";
+import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;
@@ -53,7 +54,7 @@ export function HeroSvg(props: Props) {
         width="100%"
         viewBox={config.viewBox}
         xmlns="http://www.w3.org/2000/svg"
-        className={className}
+        className={cn("select-none", className)}
       >
         <text {...baseTextProps} {...config.void} fill="currentColor">
           VOID
