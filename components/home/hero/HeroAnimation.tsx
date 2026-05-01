@@ -8,9 +8,8 @@ import {
 } from "motion/react";
 import { useTheme } from "next-themes";
 import { useEffect, useRef, useState } from "react";
-import { HeroHorizontal } from "./HeroHorizontal";
-import { HeroVertical } from "./HeroVertical";
 import { useMounted } from "@/hooks/useMounted";
+import { HeroSvg } from "./HeroSvg";
 
 // TODO: Fix hydration errors - unclear if they only happen when resizing with devtools.
 // TODO: Replace placeholder images.
@@ -137,7 +136,7 @@ export function HeroAnimation() {
 
   return (
     <div className="flex w-full flex-col items-center gap-8">
-      <HeroVertical
+      <HeroSvg
         className="select-none md:hidden"
         voidImageHref={voidImage}
         underflowImageHref={underflowImage}
@@ -145,8 +144,9 @@ export function HeroAnimation() {
         bgY={bgY}
         groupOpacity={groupOpacity}
         voidFontSize={voidFontSize}
+        layout="vertical"
       />
-      <HeroHorizontal
+      <HeroSvg
         className="hidden select-none md:block"
         voidImageHref={voidImage}
         underflowImageHref={underflowImage}
@@ -154,6 +154,7 @@ export function HeroAnimation() {
         bgY={bgY}
         groupOpacity={groupOpacity}
         voidFontSize={voidFontSize}
+        layout="horizontal"
       />
       <motion.p
         style={{ opacity: groupOpacity }}
