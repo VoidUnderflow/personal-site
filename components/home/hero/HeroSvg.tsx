@@ -13,7 +13,8 @@ type Props = {
       bgX: MotionValue<number>;
       bgY: MotionValue<number>;
       groupOpacity: MotionValue<number>;
-      voidFontSize: MotionValue<number>;
+      outlineOpacity: MotionValue<number>;
+      underflowStrokeWidth: MotionValue<number>;
     }
 );
 
@@ -72,7 +73,8 @@ export function HeroSvg(props: Props) {
     bgX,
     bgY,
     groupOpacity,
-    voidFontSize,
+    outlineOpacity,
+    underflowStrokeWidth,
   } = props;
 
   return (
@@ -80,19 +82,14 @@ export function HeroSvg(props: Props) {
       width="100%"
       viewBox={config.viewBox}
       xmlns="http://www.w3.org/2000/svg"
-      className={`select-none ${className}`}
+      className={cn("select-none", className)}
     >
       <defs>
         <mask id={config.maskIds.void}>
           <rect x="0" y="0" width="100%" height="100%" fill="black" />
-          <motion.text
-            {...baseTextProps}
-            {...config.void}
-            fill="white"
-            style={{ fontSize: voidFontSize }}
-          >
+          <text {...baseTextProps} {...config.void} fill="white">
             VOID
-          </motion.text>
+          </text>
         </mask>
 
         <mask id={config.maskIds.underflow}>
@@ -130,20 +127,23 @@ export function HeroSvg(props: Props) {
         {...config.void}
         fill="none"
         strokeWidth={1.5}
-        style={{ fontSize: voidFontSize, stroke: "var(--foreground)" }}
+        style={{ stroke: "var(--foreground)", strokeOpacity: outlineOpacity }}
       >
         VOID
       </motion.text>
 
-      <text
+      <motion.text
         {...baseTextProps}
         {...config.underflow}
         fill="none"
-        strokeWidth={1.5}
-        style={{ stroke: "var(--foreground)" }}
+        style={{
+          strokeWidth: underflowStrokeWidth,
+          stroke: "var(--foreground)",
+          strokeOpacity: outlineOpacity,
+        }}
       >
         UNDERFLOW
-      </text>
+      </motion.text>
     </svg>
   );
 }

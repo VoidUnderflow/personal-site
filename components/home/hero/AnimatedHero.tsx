@@ -9,7 +9,6 @@ import {
 import { useEffect, useRef, useState } from "react";
 import { HeroSvg } from "./HeroSvg";
 
-// TODO: Fix hydration errors - unclear if they only happen when resizing with devtools.
 // TODO: Replace placeholder images.
 const pairs = [
   {
@@ -48,17 +47,25 @@ const FINAL_VERSE =
   "And that makes me happy. For it says that no matter how hard the world pushes against me, within me, there's something stronger — something better, pushing right back.";
 
 export function AnimatedHero() {
+  // Idx of current image / verse combo.
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [isFinal, setIsFinal] = useState(false);
 
-  // hacky(?) way to circumvent adding currentIdx as a dep for useEffect
+  // So we don't add currentIdx as a dep for the useEffect.
   const currentIdxRef = useRef(0);
 
-  // opacity for both the SVGs and the text
-  const groupOpacity = useMotionValue(1);
-  // VOID "pulse"
-  const voidFontSize = useMotionValue(128);
+  // Have we reached the final verse?
+  const [isFinal, setIsFinal] = useState(false);
 
+  // Opacity of svg bg and the text underneath.
+  const groupOpacity = useMotionValue(0);
+
+  // SVG text outline opacity - goes to 0 at final verse.
+  const outlineOpacity = useMotionValue(1);
+
+  // Controls stroke width of underflow part of the svg.
+  const underflowStrokeWidth = useMotionValue(1.5);
+
+  // SVG bg coordinates (rotation).
   const bgX = useMotionValue(0);
   const bgY = useMotionValue(0);
 
@@ -73,42 +80,75 @@ export function AnimatedHero() {
 
   const [, animate] = useAnimate();
 
-  // responsible for the bg + verse cycling
-  // should run only once per page render
+  // BG + verse cycling, ran once per render.
   useEffect(() => {
     let cancelled = false;
 
+    async function pulse() {
+      if (cancelled) return;
+      await animate(underflowStrokeWidth, 1.1, {
+        duration: 1,
+        ease: "easeOut",
+      });
+    }
+
     async function loop() {
       while (!cancelled) {
-        await new Promise<void>((resolve) => setTimeout(resolve, 4000));
+        // Sit in darkness for a beat.
+        await new Promise<void>((resolve) => setTimeout(resolve, 1500));
         if (cancelled) return;
 
-        // TODO: pulse finishes first, take another look
+        // Stroke thins slowly.
+        await pulse();
+        if (cancelled) return;
+
+        // Stroke returns to normal while the world rushes in.
         await Promise.all([
-          animate(groupOpacity, 0, { duration: 0.6, ease: "easeIn" }),
-          animate(voidFontSize, 134, { duration: 0.3, ease: "easeIn" }),
+          animate(underflowStrokeWidth, 1.5, { duration: 0.1, ease: "easeIn" }),
+          animate(groupOpacity, 1, { duration: 0.1, ease: "easeOut" }),
         ]);
+
+        // Hold.
+        await new Promise<void>((resolve) => setTimeout(resolve, 3500));
+        if (cancelled) return;
+
+        // Slowly empty.
+        await animate(groupOpacity, 0, { duration: 1.5, ease: [0.7, 0, 1, 1] });
         if (cancelled) return;
 
         const nextIdx = currentIdxRef.current + 1;
 
+        // Check if we reached the final verse.
         if (nextIdx >= pairs.length) {
-          // verses have finished cycling, go for the final one
           setIsFinal(true);
+
+          await new Promise<void>((resolve) => setTimeout(resolve, 1500));
+          if (cancelled) return;
+
+          await pulse();
+          if (cancelled) return;
+
           await Promise.all([
-            animate(groupOpacity, 1, { duration: 0.6, ease: "easeOut" }),
-            animate(voidFontSize, 128, { duration: 0.3, ease: "easeOut" }),
+            animate(underflowStrokeWidth, 1.5, {
+              duration: 0.2,
+              ease: "easeIn",
+            }),
+            animate(groupOpacity, 1, { duration: 1, ease: "easeOut" }),
           ]);
+
+          // Hold, then the barrier between the self and the world disappears.
+          await new Promise<void>((resolve) => setTimeout(resolve, 2000));
+          if (cancelled) return;
+
+          await animate(outlineOpacity, 0, {
+            duration: 2.0,
+            ease: "easeInOut",
+          });
           return;
         }
 
         currentIdxRef.current += 1;
         setCurrentIdx(nextIdx);
-
-        await Promise.all([
-          animate(groupOpacity, 1, { duration: 0.6, ease: "easeOut" }),
-          animate(voidFontSize, 128, { duration: 0.3, ease: "easeOut" }),
-        ]);
       }
     }
 
@@ -116,7 +156,7 @@ export function AnimatedHero() {
     return () => {
       cancelled = true;
     };
-  }, [animate, groupOpacity, voidFontSize]);
+  }, [animate, groupOpacity, outlineOpacity, underflowStrokeWidth]);
 
   const voidImage = isFinal ? finalImages.void : pairs[currentIdx].voidImage;
   const underflowImage = isFinal
@@ -133,7 +173,8 @@ export function AnimatedHero() {
         bgX={bgX}
         bgY={bgY}
         groupOpacity={groupOpacity}
-        voidFontSize={voidFontSize}
+        outlineOpacity={outlineOpacity}
+        underflowStrokeWidth={underflowStrokeWidth}
         layout="vertical"
       />
       <HeroSvg
@@ -143,7 +184,8 @@ export function AnimatedHero() {
         bgX={bgX}
         bgY={bgY}
         groupOpacity={groupOpacity}
-        voidFontSize={voidFontSize}
+        outlineOpacity={outlineOpacity}
+        underflowStrokeWidth={underflowStrokeWidth}
         layout="horizontal"
       />
       <motion.p style={{ opacity: groupOpacity }} className="hero-quote">
