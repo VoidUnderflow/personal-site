@@ -44,9 +44,11 @@ export default function Header({ className }: HeaderProps) {
         <nav className="flex flex-col gap-2 lg:flex-row lg:justify-between">
           <div className="flex flex-col items-center md:flex-row md:gap-8 lg:gap-4">
             <Link href="/">
-              <p className="font-logo text-tertiary hover:border-tertiary border-background border-2 px-1 text-2xl hover:border-dashed">
-                <span className="text-foreground">VOID</span>
-                <span>UNDERFLOW</span>
+              <p className="hover:border-tertiary border-background border-2 px-1 text-2xl hover:border-dashed">
+                <span className="text-foreground font-logo-void">VOID</span>
+                <span className="font-logo-underflow text-tertiary">
+                  UNDERFLOW
+                </span>
               </p>
             </Link>
             <ThemeToggle />

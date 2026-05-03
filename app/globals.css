@@ -37,7 +37,8 @@
   --color-neutral: var(--neutral);
 
   --font-base: var(--font-space-mono);
-  --font-logo: var(--font-rubik-lines);
+  --font-logo-underflow: var(--font-rubik-lines);
+  --font-logo-void: var(--font-rubik-fade);
 }
 
 :root {
