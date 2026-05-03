@@ -22,15 +22,6 @@ export interface Project {
 
 const projects: Project[] = [
   {
-    id: "electron-progress-tracker",
-    title: "Electron Progress Tracker",
-    description:
-      "Desktop app for tracking goals through progress bars. Has Dropbox cloud back-ups, customisable sounds and themes, and notes.",
-    githubUrl: "https://github.com/VoidUnderflow/electron-progress-tracker",
-    tags: ["React", "TailwindCSS", "TypeScript"],
-    image: electronProgress,
-  },
-  {
     id: "personal-website",
     title: "voidunderflow.com",
     description:
@@ -43,7 +34,7 @@ const projects: Project[] = [
     id: "learning-react-and-next",
     title: "React and NextJS practice",
     description:
-      "Various small React projects that put together go through most of its features and use",
+      "Learning React through small projects and courses. Still adding things here.",
     githubUrl: "https://github.com/VoidUnderflow/learning-react-and-next",
     tags: [
       "NextJS",
@@ -55,6 +46,16 @@ const projects: Project[] = [
     ],
     image: reactAndNext,
   },
+  {
+    id: "electron-progress-tracker",
+    title: "Electron Progress Tracker",
+    description:
+      "Desktop app for tracking goals through progress bars. Has Dropbox cloud back-ups, customisable sounds and themes, and notes.",
+    githubUrl: "https://github.com/VoidUnderflow/electron-progress-tracker",
+    tags: ["React", "TailwindCSS", "TypeScript"],
+    image: electronProgress,
+  },
+
   {
     id: "strawberry-job-board-api",
     title: "Strawberry GraphQL job board API",
