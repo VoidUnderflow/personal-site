@@ -33,7 +33,7 @@ const components: MDXComponents = {
     </ul>
   ),
   a: ({ children, href }) => (
-    <Link href={href} className="inline-link">
+    <Link className="text-secondary visited:text-primary" href={href}>
       {children}
     </Link>
   ),
