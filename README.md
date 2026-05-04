@@ -22,8 +22,6 @@ There's no fix from my side I think. It would be cool if a request wasn't necess
 
 See this [discussion](https://github.com/orgs/giscus/discussions/950).
 
-If I authorise Giscus to post on my behalf using the embed on my website, can it do so on the Discussions of any project that enables it, or only on mine?
+If I authorise Giscus to post on my behalf using the embed on my website, can it do so on the Discussions of any project that enables it, or only on mine? The link above seems to support the former, which is a bit too permissive for my taste.
 
-I think the discussion says that it can only do so on my project if I understand it correctly? Even if the opposite were true, not the biggest deal in the world I guess.
-
-In the end, I decided to automatically create a discussion thread with a GitHub action whenever a new post is pushed to main, and then point to that under the post. Too many headaches given that it's very likely that no one will ever comment here.
+In the end, I decided to automatically create a discussion thread with a GitHub action whenever a new post is pushed to main, and then point to that under the post. This has taken too much time given that it's very likely that no one will ever comment here. I did learn a few things though, so that's a positive.
