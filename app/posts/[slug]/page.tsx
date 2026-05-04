@@ -1,4 +1,3 @@
-import Comments from "@/components/posts/Comments";
 import { getPostBySlug, getAllPosts } from "@/data/posts/posts";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -56,40 +55,19 @@ export default async function PostPage({
       <div className="prose prose-lg max-w-none px-16">
         <Post />
       </div>
-      <div className="mx-1">
-        <Comments />
-        <p className="text-muted-foreground mt-2 text-sm">
-          Note: if you don&apos;t want to give any permissions to{" "}
-          <Link
-            href="https://giscus.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            Giscus
-          </Link>
-          , you can instead create a &quot;General&quot; discussion{" "}
-          <Link
-            href="https://github.com/VoidUnderflow/personal-site/discussions"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            here
-          </Link>{" "}
-          with the title &quot;posts/{slug}&quot; and comment there instead :D
-          (although, it should be{" "}
-          <Link
-            href="https://github.com/orgs/giscus/discussions/950"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            safe
-          </Link>
-          )
-        </p>
-      </div>
+      {/* TODO: Modify this when you create a discussion with GitHub Actions. */}
+      <p className="text-muted-foreground text-sm">
+        If you want to discuss this post, you can do it so here:
+        <Link
+          href="https://github.com/VoidUnderflow/personal-site/discussions"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          GitHub Discussions
+        </Link>
+        .
+      </p>
     </article>
   );
 }
