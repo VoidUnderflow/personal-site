@@ -18,7 +18,7 @@ export function PostCard({ post }: PostCardProps) {
 
       {/* Title + Description + Tags */}
       <div className="flex flex-col gap-2">
-        <h2 className="decoration-primary hover:text-primary text-lg font-bold underline decoration-2">
+        <h2 className="hover:text-primary text-lg font-bold underline decoration-2">
           <Link href={`/posts/${post.slug}`}>{post.title}</Link>
         </h2>
         <p>{post.description}</p>
