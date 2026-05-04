@@ -18,10 +18,12 @@ Firefox might(?) eventually implement this in the future as well.
 
 There's no fix from my side I think. It would be cool if a request wasn't necessary to style Giscus, but there doesn't seem to be a lot of interest in the project.
 
-### Permissions didn't quite feel right
+### Still confused by GitHub's permissions model
 
 See this [discussion](https://github.com/orgs/giscus/discussions/950).
 
-If I understand it correctly, if you authorise Giscus to post on your behalf, it can do so on a Discussions thread of any project that enables it. Not the biggest risk in the world, and not sure if it can even happen in practice. Personally, I wouldn't agree to that so I won't ask someone else to.
+If I authorise Giscus to post on my behalf using the embed on my website, can it do so on the Discussions of any project that enables it, or only on mine?
 
-In the end, I decided to automatically create a discussion thread with a GitHub action whenever a new post is pushed to main, and then point to that under the post.
+I think the discussion says that it can only do so on my project if I understand it correctly? Even if the opposite were true, not the biggest deal in the world I guess.
+
+In the end, I decided to automatically create a discussion thread with a GitHub action whenever a new post is pushed to main, and then point to that under the post. Too many headaches given that it's very likely that no one will ever comment here.
