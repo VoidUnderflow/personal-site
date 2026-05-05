@@ -17,7 +17,7 @@ export function PostTagBadge({
   return (
     <div
       className={clsx(
-        "border-foreground mt-2 rounded-lg border px-2",
+        "border-foreground rounded-lg border px-1.5 py-0.5 text-xs",
         onToggle && "hover:cursor-pointer",
         isActive
           ? "bg-foreground text-background"

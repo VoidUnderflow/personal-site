@@ -1,6 +1,7 @@
 import { Post } from "@/data/posts/posts";
 import Link from "next/link";
 import { PostTagList } from "./PostTagList";
+import { formatPostDate } from "@/lib/utils";
 
 interface PostCardProps {
   post: Post;
@@ -8,22 +9,18 @@ interface PostCardProps {
 
 export function PostCard({ post }: PostCardProps) {
   return (
-    <article key={post.slug} className="flex gap-4 rounded-xl py-2">
-      {/* Date */}
-      <div className="pl-2">
-        <time className="text-lg italic" dateTime={post.date}>
-          {post.date}
-        </time>
-      </div>
-
-      {/* Title + Description + Tags */}
-      <div className="flex flex-col gap-2">
-        <h2 className="hover:text-primary text-lg font-bold underline decoration-2">
-          <Link href={`/posts/${post.slug}`}>{post.title}</Link>
-        </h2>
-        <p>{post.description}</p>
-        <PostTagList tags={post.tags} />
-      </div>
+    <article className="flex flex-col gap-1">
+      <h2 className="hover:text-primary text-lg font-bold underline decoration-2">
+        <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+      </h2>
+      <p className="text-sm">{post.description}</p>
+      <time
+        className="text-muted-foreground text-sm italic"
+        dateTime={post.date}
+      >
+        {formatPostDate(post.date)}
+      </time>
+      <PostTagList tags={post.tags} />
     </article>
   );
 }

@@ -3,9 +3,10 @@
 import { Post, PostTag } from "@/data/posts/posts";
 import { PostTagList } from "./PostTagList";
 import { PostCard } from "./PostCard";
-import { Separator } from "@/components/ui/separator";
-import React, { useState } from "react";
+import { DoubleSeparator } from "@/components/ui/separator";
+import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import React from "react";
 
 interface PostsClientProps {
   posts: Post[];
@@ -17,17 +18,19 @@ export function PostsClient({ posts, tags }: PostsClientProps) {
 
   function toggleTag(tag: PostTag) {
     const isActive = activeTags.includes(tag);
-
     if (isActive) {
-      setActiveTags((activeTags) => activeTags.filter((t) => t !== tag));
+      setActiveTags((prev) => prev.filter((t) => t !== tag));
     } else {
-      setActiveTags((activeTags) => [...activeTags, tag]);
+      setActiveTags((prev) => [...prev, tag]);
     }
   }
 
+  const filtered = posts.filter((post) =>
+    activeTags.every((activeTag) => post.tags.includes(activeTag)),
+  );
+
   return (
     <>
-      {" "}
       <section className="flex gap-3">
         <p className="flex items-center">
           Filter posts by tag (click to toggle):{" "}
@@ -37,22 +40,27 @@ export function PostsClient({ posts, tags }: PostsClientProps) {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTags.join(",")}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-4"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
         >
-          {posts
-            .filter((post) =>
-              activeTags.every((activeTag) => post.tags.includes(activeTag)),
-            )
-            .map((post, index, filtered) => (
-              <React.Fragment key={post.slug}>
-                <PostCard post={post} />
-                {index < filtered.length - 1 && <Separator dotted />}
-              </React.Fragment>
-            ))}
+          {filtered.length === 0 ? (
+            <p className="text-muted-foreground mt-6 text-center italic">
+              No posts match the selected tags.
+            </p>
+          ) : (
+            <>
+              <DoubleSeparator />
+              {filtered.map((post) => (
+                <React.Fragment key={post.slug}>
+                  <PostCard post={post} />
+                  <DoubleSeparator />
+                </React.Fragment>
+              ))}
+            </>
+          )}
         </motion.div>
       </AnimatePresence>
     </>

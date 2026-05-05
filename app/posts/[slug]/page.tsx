@@ -5,6 +5,7 @@ import { PostTagList } from "@/components/posts/PostTagList";
 import Link from "next/link";
 import { ScrollProgressBar } from "@/components/header/ScrollProgressBar";
 import { Separator } from "@/components/ui/separator";
+import { formatPostDate } from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -41,10 +42,10 @@ export default async function PostPage({
   return (
     <article className="page-vertical-spacing">
       <ScrollProgressBar />
-      <header className="flex flex-col gap-1">
+      <header className="flex flex-col gap-3">
         <h1 className="title-heading">{post.title}</h1>
         <time className="text-muted-foreground italic" dateTime={post.date}>
-          {post.date}
+          {formatPostDate(post.date)}
         </time>
         <p>{post.description}</p>
         <PostTagList tags={post.tags} />
@@ -52,12 +53,12 @@ export default async function PostPage({
 
       <Separator />
 
-      <div className="prose prose-lg max-w-none px-16">
+      <div className="prose prose-lg mx-auto max-w-prose">
         <Post />
       </div>
       {/* TODO: Modify this when you create a discussion with GitHub Actions. */}
       <p className="text-muted-foreground text-sm">
-        If you want to discuss this post, you can do it so here:
+        Want to discuss this post? Head over to{" "}
         <Link
           href="https://github.com/VoidUnderflow/personal-site/discussions"
           target="_blank"
