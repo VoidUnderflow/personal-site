@@ -82,7 +82,6 @@ export function AnimatedHero() {
     let cancelled = false;
 
     async function pulse() {
-      if (cancelled) return;
       await animate(underflowStrokeWidth, 1.1, {
         duration: 1,
         ease: "easeOut",
@@ -93,11 +92,9 @@ export function AnimatedHero() {
       while (!cancelled) {
         // Sit in darkness for a beat.
         await new Promise<void>((resolve) => setTimeout(resolve, 1500));
-        if (cancelled) return;
 
         // Stroke thins slowly.
         await pulse();
-        if (cancelled) return;
 
         // Stroke returns to normal while the world rushes in.
         await Promise.all([
@@ -107,11 +104,9 @@ export function AnimatedHero() {
 
         // Hold.
         await new Promise<void>((resolve) => setTimeout(resolve, 3500));
-        if (cancelled) return;
 
         // Slowly empty.
         await animate(groupOpacity, 0, { duration: 1.5, ease: [0.7, 0, 1, 1] });
-        if (cancelled) return;
 
         const nextIdx = currentIdxRef.current + 1;
 
@@ -120,11 +115,7 @@ export function AnimatedHero() {
           setIsFinal(true);
 
           await new Promise<void>((resolve) => setTimeout(resolve, 1500));
-          if (cancelled) return;
-
           await pulse();
-          if (cancelled) return;
-
           await Promise.all([
             animate(underflowStrokeWidth, 1.5, {
               duration: 0.2,
@@ -135,8 +126,6 @@ export function AnimatedHero() {
 
           // Hold, then the barrier between the self and the world disappears.
           await new Promise<void>((resolve) => setTimeout(resolve, 2000));
-          if (cancelled) return;
-
           await animate(outlineOpacity, 0, {
             duration: 2.0,
             ease: "easeInOut",
