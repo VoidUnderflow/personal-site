@@ -7,15 +7,17 @@ export function SampleComponent({ children }: { children: React.ReactNode }) {
 
 const components: MDXComponents = {
   h1: ({ children }) => (
-    <h1 className="text-foreground text-[1.5rem] underline decoration-dashed">
+    <h1 className="text-foreground mt-8 mb-3 text-2xl underline decoration-dashed">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-foreground text-[1.4rem] underline">{children}</h2>
+    <h2 className="text-foreground mt-7 mb-2 text-[1.4rem] underline">
+      {children}
+    </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-foreground text-[1.3rem] underline decoration-double">
+    <h3 className="text-foreground mt-6 mb-2 text-[1.3rem] underline decoration-double">
       {children}
     </h3>
   ),
