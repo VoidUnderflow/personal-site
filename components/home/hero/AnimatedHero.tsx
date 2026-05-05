@@ -165,7 +165,7 @@ export function AnimatedHero() {
   const verse = isFinal ? FINAL_VERSE : pairs[currentIdx].verse;
 
   return (
-    <>
+    <div className="relative w-full">
       <HeroSvg
         className="md:hidden"
         voidImageHref={voidImage}
@@ -188,9 +188,12 @@ export function AnimatedHero() {
         underflowStrokeWidth={underflowStrokeWidth}
         layout="horizontal"
       />
-      <motion.p style={{ opacity: groupOpacity }} className="hero-quote">
+      <motion.p
+        style={{ opacity: groupOpacity }}
+        className="hero-quote absolute top-full left-1/2 mt-2 w-3/4 -translate-x-1/2"
+      >
         {verse}
       </motion.p>
-    </>
+    </div>
   );
 }
