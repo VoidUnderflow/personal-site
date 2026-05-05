@@ -38,10 +38,7 @@ const pairs = [
 ] as const;
 
 // Shown after all four verses have cycled.
-const finalImages = {
-  void: "https://picsum.photos/seed/final-void/1600/1000",
-  underflow: "https://picsum.photos/seed/final-flow/1600/1000",
-};
+const FINAL_IMAGE = "https://picsum.photos/seed/final/1600/1000";
 
 const FINAL_VERSE =
   "And that makes me happy. For it says that no matter how hard the world pushes against me, within me, there's something stronger — something better, pushing right back.";
@@ -158,9 +155,9 @@ export function AnimatedHero() {
     };
   }, [animate, groupOpacity, outlineOpacity, underflowStrokeWidth]);
 
-  const voidImage = isFinal ? finalImages.void : pairs[currentIdx].voidImage;
+  const voidImage = isFinal ? FINAL_IMAGE : pairs[currentIdx].voidImage;
   const underflowImage = isFinal
-    ? finalImages.underflow
+    ? FINAL_IMAGE
     : pairs[currentIdx].underflowImage;
   const verse = isFinal ? FINAL_VERSE : pairs[currentIdx].verse;
 
