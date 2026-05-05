@@ -36,4 +36,13 @@ function Separator({
   );
 }
 
-export { Separator };
+function DoubleSeparator() {
+  return (
+    <div className="flex flex-col gap-1">
+      <Separator dotted />
+      <Separator dotted />
+    </div>
+  );
+}
+
+export { Separator, DoubleSeparator };
