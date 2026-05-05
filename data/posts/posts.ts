@@ -17,7 +17,7 @@ const posts: Post[] = [
     slug: "welcome",
     title: "Welcome",
     description: "Short introduction and a few words about this website",
-    date: "2025-04-16",
+    date: "2026-04-16",
     tags: [PostTag.Meta, PostTag.Introduction],
   },
 ];

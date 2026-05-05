@@ -15,7 +15,7 @@ export default function PostsPage() {
     <div className="page-vertical-spacing">
       <h1 className="title-heading">Posts</h1>
       <p>
-        Random non-AI generated thoughts, both tech and non-tech related. The
+        Random non-AI-generated thoughts, both tech and non-tech related. The
         opinions here are my own.
       </p>
       <Separator />
