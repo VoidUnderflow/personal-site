@@ -2,6 +2,10 @@
 
 My blog / portfolio.
 
+## Credits
+
+Third-party assets are listed in [CREDITS.md](CREDITS.md).
+
 ## References
 
 1. Site icons taken from [svgicons.com](https://svgicons.com/).
