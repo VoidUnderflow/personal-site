@@ -21,9 +21,8 @@ export default function HomePage() {
       <div className="flex flex-col gap-12 py-16">
         <p>
           Welcome to my little corner of the internet, where I share things I
-          find interesting and some stuff I&apos;ve coded.
-          <br />I don&apos;t take myself too seriously and you probably
-          shouldn&apos;t either.
+          find interesting and some of the stuff I&apos;ve coded. I don&apos;t
+          take myself too seriously and you probably shouldn&apos;t either.
         </p>
         <div className="flex flex-col gap-12">
           <HomeSection title="Latest posts">
