@@ -15,6 +15,7 @@ type Props = {
       groupOpacity: MotionValue<number>;
       outlineOpacity: MotionValue<number>;
       underflowStrokeWidth: MotionValue<number>;
+      underflowStrokeOpacity: MotionValue<number>;
     }
 );
 
@@ -75,6 +76,7 @@ export function HeroSvg(props: Props) {
     groupOpacity,
     outlineOpacity,
     underflowStrokeWidth,
+    underflowStrokeOpacity,
   } = props;
 
   return (
@@ -139,7 +141,7 @@ export function HeroSvg(props: Props) {
         style={{
           strokeWidth: underflowStrokeWidth,
           stroke: "var(--foreground)",
-          strokeOpacity: outlineOpacity,
+          strokeOpacity: underflowStrokeOpacity,
         }}
       >
         UNDERFLOW
