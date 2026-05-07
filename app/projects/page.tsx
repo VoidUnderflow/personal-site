@@ -20,8 +20,8 @@ export default function ProjectsPage() {
     <div className="page-vertical-spacing">
       <h1 className="title-heading">Projects</h1>
       <p>
-        A collection of hobby projects I worked on - the main focus was to learn
-        new tools, languages, and have fun doing it. Unsure if there&apos;s
+        Stuff I&apos;ve been working on in my free time. My main focus is to
+        learn new things and have fun doing it. <br /> Unsure if there&apos;s
         anything truly useful in here.
       </p>
 
