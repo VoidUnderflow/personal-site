@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
+@source inline("border-b-{primary,secondary,tertiary,neutral}");
+@source inline("bg-{primary,secondary,tertiary,neutral}");
+@source inline("hover:border-{primary,secondary,tertiary,neutral}");
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -112,22 +115,6 @@
 @layer components {
   .page-vertical-spacing {
     @apply flex flex-col gap-4;
-  }
-
-  .nav-link-primary {
-    @apply border-b-primary hover:border-primary! active:bg-primary;
-  }
-
-  .nav-link-secondary {
-    @apply border-b-secondary hover:border-secondary! active:bg-secondary;
-  }
-
-  .nav-link-tertiary {
-    @apply border-b-tertiary hover:border-tertiary! active:bg-tertiary;
-  }
-
-  .nav-link-neutral {
-    @apply border-b-neutral hover:border-neutral! active:bg-neutral;
   }
 
   .tags-container {

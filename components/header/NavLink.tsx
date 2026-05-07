@@ -21,14 +21,7 @@ export default function NavLink({ href, color, children }: NavLinkProps) {
     >
       <span
         className={`pointer-events-none absolute inset-0 bg-${color} opacity-0 group-active:opacity-100`}
-        style={{
-          maskImage: `url('${svgFile[color]}')`,
-          maskSize: "cover",
-          maskPosition: "center",
-          WebkitMaskImage: `url('${svgFile[color]}')`,
-          WebkitMaskSize: "cover",
-          WebkitMaskPosition: "center",
-        }}
+        style={{ mask: `url('${svgFile[color]}') center / cover` }}
       />
       <span className="relative">{children}</span>
     </Link>
