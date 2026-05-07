@@ -41,7 +41,7 @@ export default function Header({ className }: HeaderProps) {
       style={isHome ? { opacity } : undefined}
     >
       <div className={isHome ? "py-8" : undefined}>
-        <nav className="flex flex-col gap-2 lg:flex-row lg:justify-between">
+        <nav className="flex flex-col gap-2 md:flex-row md:justify-between">
           <div className="flex flex-col items-center md:flex-row md:gap-8 lg:gap-4">
             <Link href="/">
               <p className="hover:border-tertiary border-background border-2 px-1 text-2xl hover:border-dashed">
@@ -53,7 +53,7 @@ export default function Header({ className }: HeaderProps) {
             </Link>
             <ThemeToggle />
           </div>
-          <ul className="flex w-full justify-center gap-8 md:justify-start lg:justify-end">
+          <ul className="flex w-full justify-center gap-8 md:justify-end">
             <li>
               <NavLink href="/posts" color="primary">
                 Posts
