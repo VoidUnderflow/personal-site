@@ -2,6 +2,40 @@
 
 My blog / portfolio.
 
+## Deployment
+
+I'm aiming to not pay anything except for the domain. The current plan is:
+
+- Have a main and dev branch on GitHub, perform some checks / tests when merging to main;
+- Automatically deployed on Vercel when main is updated;
+- External images + resume hosted in a Cloudflare R2 bucket; can only be accessed from the voidunderflow.com domain;
+- Have a GitHub Action cron-job-like thing (if possible) to query Cloudflare bucket every x minutes and make it private if half the limits are reached;
+
+Will need to keep these non-Git-committed images backed up in my GDrive / Mega, and then copy them in when building the website locally (since I won't be able to access the bucket from localhost).
+
+### Relevant limits (2026)
+
+#### Vercel hobby
+
+- Active CPU: 4hrs;
+- Image optimisation source images: 1000;
+- 100 deployments / day (won't ever hit it);
+
+Make sure nothing is on SSR.
+Could turn off image optimisation, as it seems to eat up some CPU(?).
+Might just make the website fully static.
+
+#### Cloudflare R2
+
+- storage: 10GB/month;
+- class A ops (uploads, settings?): 1M / month;
+- class B ops (reads, downloads): 10M / month;
+- egress: free; (main draw of this - if they change it, dip; Vercel Blobs had less generous limits)
+
+#### GitHub Actions
+
+They seem to still be free for public repos (for now).
+
 ## Credits
 
 Third-party assets are listed in [CREDITS.md](CREDITS.md).
