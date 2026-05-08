@@ -1,14 +1,4 @@
-import { StaticImageData } from "next/image";
-import electronProgress from "./images/electron-progress-tracker.png";
-import voidUnderflow from "./images/voidunderflow.png";
-import reactAndNext from "./images/react-and-next-practice.png";
-import strawberryApi from "./images/strawberry-api.png";
-import dsa from "./images/dsa.png";
-import miscFractal from "./images/misc_fractal.png";
-import mlPractice from "./images/ml-practice.png";
-import tailwindPractice from "./images/tailwind-practice.png";
-import frontendFundamentals from "./images/frontend-fundamentals.png";
-import drfRecipes from "./images/drf-recipes.png";
+import { getProjectImageURL } from "@/lib/utils";
 import { ProjectTagId } from "./tags";
 
 export interface Project {
@@ -17,7 +7,7 @@ export interface Project {
   description: string;
   githubUrl: string;
   tags: ProjectTagId[];
-  image: StaticImageData;
+  image: string;
 }
 
 const projects: Project[] = [
@@ -28,7 +18,7 @@ const projects: Project[] = [
       "This website. Made with Next.js and hosted on Vercel. Uses Giscus for discussions and MDX for displaying posts.",
     githubUrl: "https://github.com/VoidUnderflow/personal-site",
     tags: ["NextJS", "TailwindCSS", "TypeScript", "MDX"],
-    image: voidUnderflow,
+    image: getProjectImageURL("voidunderflow.png"),
   },
   {
     id: "learning-react-and-next",
@@ -44,7 +34,7 @@ const projects: Project[] = [
       "Docker",
       "Postgres",
     ],
-    image: reactAndNext,
+    image: getProjectImageURL("react-and-next-practice.png"),
   },
   {
     id: "electron-progress-tracker",
@@ -53,7 +43,7 @@ const projects: Project[] = [
       "Desktop app for tracking goals through progress bars. Has Dropbox cloud back-ups, customisable sounds and themes, and notes.",
     githubUrl: "https://github.com/VoidUnderflow/electron-progress-tracker",
     tags: ["React", "TailwindCSS", "TypeScript"],
-    image: electronProgress,
+    image: getProjectImageURL("electron-progress-tracker.png"),
   },
 
   {
@@ -63,7 +53,7 @@ const projects: Project[] = [
       "A practice GraphQL API using Strawberry, FastAPI, and SQLAlchemy. Has JWT-based auth, roles, and >90% test coverage.",
     githubUrl: "https://github.com/VoidUnderflow/strawberry-job-board-api",
     tags: ["FastAPI", "GraphQL", "Postgres", "Docker", "Python", "PyTest"],
-    image: strawberryApi,
+    image: getProjectImageURL("strawberry-api.png"),
   },
   {
     id: "algorithms-and-data-structures",
@@ -73,7 +63,7 @@ const projects: Project[] = [
     githubUrl:
       "https://github.com/VoidUnderflow/algorithms-and-data-structures",
     tags: ["Python", "TypeScript"],
-    image: dsa,
+    image: getProjectImageURL("dsa.png"),
   },
   {
     id: "miscellaneous-projects",
@@ -82,7 +72,7 @@ const projects: Project[] = [
       "Various tutorials, university projects, and experiments with different languages and tools.",
     githubUrl: "https://github.com/VoidUnderflow/miscellaneous-projects",
     tags: ["Python", "Java", "Rust", "Haskell"],
-    image: miscFractal,
+    image: getProjectImageURL("misc-fractal.png"),
   },
   {
     id: "ml-practice",
@@ -91,7 +81,7 @@ const projects: Project[] = [
       "Machine Learning tutorials, experiments, and university coursework.",
     githubUrl: "https://github.com/VoidUnderflow/ml-practice",
     tags: ["Python", "PyTorch"],
-    image: mlPractice,
+    image: getProjectImageURL("ml-practice.png"),
   },
   {
     id: "frontend-fundamentals",
@@ -100,7 +90,7 @@ const projects: Project[] = [
       "Refreshing CSS knowledge and learning JS with exercises from The Odin Project, MDN, and others.",
     githubUrl: "https://github.com/VoidUnderflow/frontend-fundamentals",
     tags: ["JavaScript"],
-    image: frontendFundamentals,
+    image: getProjectImageURL("frontend-fundamentals.png"),
   },
   {
     id: "drf-recipes",
@@ -109,7 +99,7 @@ const projects: Project[] = [
       "Practice API with a focus on testing (built with TDD - 99% coverage). Has CI with GitHub Actions, JWT auth.",
     githubUrl: "https://github.com/VoidUnderflow/drf-recipes-practice-api",
     tags: ["Django", "Docker", "Postgres"],
-    image: drfRecipes,
+    image: getProjectImageURL("drf-recipes.png"),
   },
   {
     id: "tailwind-practice",
@@ -117,7 +107,7 @@ const projects: Project[] = [
     description: "Learning Tailwind basics through FrontendMentor challenges.",
     githubUrl: "https://github.com/VoidUnderflow/tailwind-practice",
     tags: ["TailwindCSS", "JavaScript"],
-    image: tailwindPractice,
+    image: getProjectImageURL("tailwind-practice.png"),
   },
 ];
 

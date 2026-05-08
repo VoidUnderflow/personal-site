@@ -13,3 +13,13 @@ export function formatPostDate(dateStr: string): string {
     year: "numeric",
   });
 }
+
+export function getBaseImageURL(): string {
+  return process.env.NEXT_PUBLIC_BUCKET_URL
+    ? `${process.env.NEXT_PUBLIC_BUCKET_URL}`
+    : "";
+}
+
+export function getProjectImageURL(imageName: string): string {
+  return `${getBaseImageURL()}/images/projects/${imageName}`;
+}

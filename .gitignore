@@ -32,6 +32,11 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.development
+!.env.production
+
+# ignore external images folder (must be present for local dev)
+public/images
 
 # vercel
 .vercel

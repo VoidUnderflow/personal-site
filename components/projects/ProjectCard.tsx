@@ -20,6 +20,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           src={project.image}
           alt={project.title}
           className="rounded-t-xl bg-black"
+          unoptimized
         />
       </div>
       <CardHeader>
