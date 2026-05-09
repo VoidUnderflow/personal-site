@@ -1,9 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
-
-export function SampleComponent({ children }: { children: React.ReactNode }) {
-  return <div className="text-red-500">{children}</div>;
-}
+import LazyImage from "@/components/common/LazyImage";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -42,7 +39,14 @@ const components: MDXComponents = {
   strong: ({ children }) => (
     <strong className="text-foreground">{children}</strong>
   ),
-  MyComponent: SampleComponent,
+  LazyImage: ({ src, width, height, alt }) => (
+    <LazyImage
+      src={src as string}
+      width={Number(width)}
+      height={Number(height)}
+      alt={(alt as string) ?? ""}
+    />
+  ),
 };
 
 export function useMDXComponents(): MDXComponents {
