@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { Project } from "@/data/projects/projects";
 import ProjectTagBadge from "./ProjectTagBadge";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
+import LazyImage from "../common/LazyImage";
 
 interface ProjectCardProps {
   project: Project;
@@ -12,17 +12,13 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Card className="relative mx-auto flex w-full max-w-sm flex-col justify-end border-none pt-0">
-      <div className="relative h-64 w-full">
-        <Image
-          fill
-          sizes="(max-width: 640px) 100vw, 384px"
-          style={{ objectFit: "contain" }}
-          src={project.image}
-          alt={project.title}
-          className="rounded-t-xl bg-black"
-          unoptimized
-        />
-      </div>
+      <LazyImage
+        src={project.image}
+        alt={project.title}
+        width={384}
+        height={256}
+        className="rounded-t-xl"
+      />
       <CardHeader>
         <CardTitle>
           <Link
