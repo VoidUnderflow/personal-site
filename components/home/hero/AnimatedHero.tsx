@@ -8,37 +8,38 @@ import {
 } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { HeroSvg } from "./HeroSvg";
+import { getImageURL } from "@/lib/utils";
 
-// TODO: Replace placeholder images.
+// TODO: Replace placeholder images with actual hero images.
 const pairs = [
   {
-    voidImage: "https://picsum.photos/seed/hate/1600/1000",
-    underflowImage: "https://picsum.photos/seed/love/1600/1000",
+    voidImage: getImageURL("hero", "placeholder.jpg"),
+    underflowImage: getImageURL("hero", "placeholder.jpg"),
     verse:
       "In the midst of hate, I found there was, within me, an invincible love.",
   },
   {
-    voidImage: "https://picsum.photos/seed/tears/1600/1000",
-    underflowImage: "https://picsum.photos/seed/smile/1600/1000",
+    voidImage: getImageURL("hero", "placeholder.jpg"),
+    underflowImage: getImageURL("hero", "placeholder.jpg"),
     verse:
       "In the midst of tears, I found there was, within me, an invincible smile.",
   },
   {
-    voidImage: "https://picsum.photos/seed/chaos/1600/1000",
-    underflowImage: "https://picsum.photos/seed/calm/1600/1000",
+    voidImage: getImageURL("hero", "placeholder.jpg"),
+    underflowImage: getImageURL("hero", "placeholder.jpg"),
     verse:
       "In the midst of chaos, I found there was, within me, an invincible calm.",
   },
   {
-    voidImage: "https://picsum.photos/seed/winter/1600/1000",
-    underflowImage: "https://picsum.photos/seed/summer/1600/1000",
+    voidImage: getImageURL("hero", "placeholder.jpg"),
+    underflowImage: getImageURL("hero", "placeholder.jpg"),
     verse:
       "In the midst of winter, I found there was, within me, an invincible summer.",
   },
 ] as const;
 
 // Shown after all four verses have cycled.
-const FINAL_IMAGE = "https://picsum.photos/seed/final/1600/1000";
+const FINAL_IMAGE = getImageURL("hero", "placeholder.jpg");
 
 const FINAL_VERSE =
   "And that makes me happy. For it says that no matter how hard the world pushes against me, within me, there's something stronger — something better, pushing right back.";
@@ -80,7 +81,7 @@ export function AnimatedHero() {
 
   const [, animate] = useAnimate();
 
-  // BG + verse cycling, ran once per render.
+  // BG + verse cycling, runs once per mount.
   useEffect(() => {
     let cancelled = false;
 
