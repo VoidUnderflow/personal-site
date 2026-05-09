@@ -1,9 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
+
+/* Make Tailwind always generate those vars (we're setting them dynamically). */
 @source inline("border-b-{primary,secondary,tertiary,neutral}");
 @source inline("bg-{primary,secondary,tertiary,neutral}");
 @source inline("hover:border-{primary,secondary,tertiary,neutral}");
+@source inline("bg-{primary,secondary,tertiary,neutral}/50");
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
