@@ -1,4 +1,4 @@
-import { getProjectImageURL } from "@/lib/utils";
+import { getImageURL } from "@/lib/utils";
 import { ProjectTagId } from "./tags";
 
 export interface Project {
@@ -18,7 +18,7 @@ const projects: Project[] = [
       "This website. Made with Next.js and hosted on Vercel. Uses Giscus for discussions and MDX for displaying posts.",
     githubUrl: "https://github.com/VoidUnderflow/personal-site",
     tags: ["NextJS", "TailwindCSS", "TypeScript", "MDX"],
-    image: getProjectImageURL("voidunderflow.png"),
+    image: getImageURL("projects","voidunderflow.png"),
   },
   {
     id: "learning-react-and-next",
@@ -34,7 +34,7 @@ const projects: Project[] = [
       "Docker",
       "Postgres",
     ],
-    image: getProjectImageURL("react-and-next-practice.png"),
+    image: getImageURL("projects","react-and-next-practice.png"),
   },
   {
     id: "electron-progress-tracker",
@@ -43,7 +43,7 @@ const projects: Project[] = [
       "Desktop app for tracking goals through progress bars. Has Dropbox cloud back-ups, customisable sounds and themes, and notes.",
     githubUrl: "https://github.com/VoidUnderflow/electron-progress-tracker",
     tags: ["React", "TailwindCSS", "TypeScript"],
-    image: getProjectImageURL("electron-progress-tracker.png"),
+    image: getImageURL("projects","electron-progress-tracker.png"),
   },
 
   {
@@ -53,7 +53,7 @@ const projects: Project[] = [
       "A practice GraphQL API using Strawberry, FastAPI, and SQLAlchemy. Has JWT-based auth, roles, and >90% test coverage.",
     githubUrl: "https://github.com/VoidUnderflow/strawberry-job-board-api",
     tags: ["FastAPI", "GraphQL", "Postgres", "Docker", "Python", "PyTest"],
-    image: getProjectImageURL("strawberry-api.png"),
+    image: getImageURL("projects","strawberry-api.png"),
   },
   {
     id: "algorithms-and-data-structures",
@@ -63,7 +63,7 @@ const projects: Project[] = [
     githubUrl:
       "https://github.com/VoidUnderflow/algorithms-and-data-structures",
     tags: ["Python", "TypeScript"],
-    image: getProjectImageURL("dsa.png"),
+    image: getImageURL("projects","dsa.png"),
   },
   {
     id: "miscellaneous-projects",
@@ -72,7 +72,7 @@ const projects: Project[] = [
       "Various tutorials, university projects, and experiments with different languages and tools.",
     githubUrl: "https://github.com/VoidUnderflow/miscellaneous-projects",
     tags: ["Python", "Java", "Rust", "Haskell"],
-    image: getProjectImageURL("misc-fractal.png"),
+    image: getImageURL("projects","misc-fractal.png"),
   },
   {
     id: "ml-practice",
@@ -81,7 +81,7 @@ const projects: Project[] = [
       "Machine Learning tutorials, experiments, and university coursework.",
     githubUrl: "https://github.com/VoidUnderflow/ml-practice",
     tags: ["Python", "PyTorch"],
-    image: getProjectImageURL("ml-practice.png"),
+    image: getImageURL("projects","ml-practice.png"),
   },
   {
     id: "frontend-fundamentals",
@@ -90,7 +90,7 @@ const projects: Project[] = [
       "Refreshing CSS knowledge and learning JS with exercises from The Odin Project, MDN, and others.",
     githubUrl: "https://github.com/VoidUnderflow/frontend-fundamentals",
     tags: ["JavaScript"],
-    image: getProjectImageURL("frontend-fundamentals.png"),
+    image: getImageURL("projects","frontend-fundamentals.png"),
   },
   {
     id: "drf-recipes",
@@ -99,7 +99,7 @@ const projects: Project[] = [
       "Practice API with a focus on testing (built with TDD - 99% coverage). Has CI with GitHub Actions, JWT auth.",
     githubUrl: "https://github.com/VoidUnderflow/drf-recipes-practice-api",
     tags: ["Django", "Docker", "Postgres"],
-    image: getProjectImageURL("drf-recipes.png"),
+    image: getImageURL("projects","drf-recipes.png"),
   },
   {
     id: "tailwind-practice",
@@ -107,7 +107,7 @@ const projects: Project[] = [
     description: "Learning Tailwind basics through FrontendMentor challenges.",
     githubUrl: "https://github.com/VoidUnderflow/tailwind-practice",
     tags: ["TailwindCSS", "JavaScript"],
-    image: getProjectImageURL("tailwind-practice.png"),
+    image: getImageURL("projects","tailwind-practice.png"),
   },
 ];
 

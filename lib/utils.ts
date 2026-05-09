@@ -20,6 +20,9 @@ export function getBaseImageURL(): string {
     : "";
 }
 
-export function getProjectImageURL(imageName: string): string {
-  return `${getBaseImageURL()}/images/projects/${imageName}`;
+export function getImageURL(
+  subfolder: "projects" | "hero" | "posts",
+  imageName: string,
+): string {
+  return `${getBaseImageURL()}/images/${subfolder}/${imageName}`;
 }
