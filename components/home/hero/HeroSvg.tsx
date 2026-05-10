@@ -109,6 +109,7 @@ export function HeroSvg(props: Props) {
         <motion.image
           href={voidImageHref}
           {...config.image}
+          preserveAspectRatio="xMidYMid slice"
           style={{ x: bgX, y: bgY }}
         />
       </motion.g>
@@ -120,6 +121,7 @@ export function HeroSvg(props: Props) {
         <motion.image
           href={underflowImageHref}
           {...config.image}
+          preserveAspectRatio="xMidYMid slice"
           style={{ x: bgX, y: bgY }}
         />
       </motion.g>

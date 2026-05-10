@@ -10,36 +10,28 @@ import { useEffect, useRef, useState } from "react";
 import { HeroSvg } from "./HeroSvg";
 import { getImageURL } from "@/lib/utils";
 
-// TODO: Replace placeholder images with actual hero images.
 const pairs = [
   {
-    voidImage: getImageURL("hero", "placeholder.jpg"),
-    underflowImage: getImageURL("hero", "placeholder.jpg"),
-    verse:
-      "In the midst of hate, I found there was, within me, an invincible love.",
-  },
-  {
-    voidImage: getImageURL("hero", "placeholder.jpg"),
-    underflowImage: getImageURL("hero", "placeholder.jpg"),
+    voidImage: getImageURL("hero", "tears.jpg"),
+    underflowImage: getImageURL("hero", "smile.jpg"),
     verse:
       "In the midst of tears, I found there was, within me, an invincible smile.",
   },
   {
-    voidImage: getImageURL("hero", "placeholder.jpg"),
-    underflowImage: getImageURL("hero", "placeholder.jpg"),
+    voidImage: getImageURL("hero", "chaos.jpg"),
+    underflowImage: getImageURL("hero", "calm.jpg"),
     verse:
       "In the midst of chaos, I found there was, within me, an invincible calm.",
   },
   {
-    voidImage: getImageURL("hero", "placeholder.jpg"),
-    underflowImage: getImageURL("hero", "placeholder.jpg"),
+    voidImage: getImageURL("hero", "winter.jpg"),
+    underflowImage: getImageURL("hero", "summer.jpg"),
     verse:
       "In the midst of winter, I found there was, within me, an invincible summer.",
   },
 ] as const;
 
-// Shown after all four verses have cycled.
-const FINAL_IMAGE = getImageURL("hero", "placeholder.jpg");
+const FINAL_IMAGE = getImageURL("hero", "all.jpg");
 
 const FINAL_VERSE =
   "And that makes me happy. For it says that no matter how hard the world pushes against me, within me, there's something stronger — something better, pushing right back.";
