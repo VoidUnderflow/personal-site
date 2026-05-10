@@ -3,6 +3,7 @@ import { getAllProjects } from "@/data/projects/projects";
 import { Hero } from "@/components/home/hero/Hero";
 import { HomeSection } from "@/components/home/HomeSection";
 import { HomeCard } from "@/components/home/HomeCard";
+import { getImageURL } from "@/lib/utils";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -15,6 +16,8 @@ export default function HomePage() {
 
   return (
     <>
+      <link rel="preload" as="image" href={getImageURL("hero", "tears.jpg")} />
+      <link rel="preload" as="image" href={getImageURL("hero", "smile.jpg")} />
       <div className="-mt-10 flex h-screen flex-col items-center justify-center">
         <Hero />
       </div>
