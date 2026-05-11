@@ -1,4 +1,4 @@
-import { BackButton } from "@/components/common/BackButton";
+import { StatusPage } from "@/components/common/StatusPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,11 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound() {
-  return (
-    <div className="flex h-full flex-1 flex-col items-center justify-center gap-4 pt-16">
-      <h1 className="font-logo text-9xl">404</h1>
-      <h2 className="text-2xl">Page Not Found</h2>
-      <BackButton />
-    </div>
-  );
+  return <StatusPage title="404" text="Page Not Found" />;
 }
