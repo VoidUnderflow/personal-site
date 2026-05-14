@@ -38,6 +38,9 @@ yarn-error.log*
 # ignore external images folder (must be present for local dev)
 public/images
 
+# don't commit resume
+public/resume
+
 # vercel
 .vercel
 

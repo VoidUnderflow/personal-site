@@ -26,3 +26,7 @@ export function getImageURL(
 ): string {
   return `${getBaseImageURL()}/images/${subfolder}/${imageName}`;
 }
+
+export function getResumeURL(): string {
+  return `${getBaseImageURL()}/resume/resume.pdf`;
+}

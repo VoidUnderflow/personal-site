@@ -1,6 +1,7 @@
 import Section from "@/components/about/Section";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { getResumeURL } from "@/lib/utils";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -53,7 +54,8 @@ export default function AboutPage() {
           </Section>
           <Separator />
           <Section label="Resume">
-            My resume can be found <Link href="/404">here.</Link> <br />
+            My resume can be found <Link href={getResumeURL()}>here.</Link>{" "}
+            <br />
             In the future, I may be adding some things that didn&apos;t fit
             there on this page.
           </Section>
