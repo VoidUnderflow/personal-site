@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 
 interface LazyImageProps {
@@ -20,12 +20,18 @@ export default function LazyImage({
   className,
 }: LazyImageProps) {
   const [loaded, setLoaded] = useState(false);
-  const [bgNotLoadedColor] = useState(
-    () =>
+
+  // Avoid hydration mismatch.
+  const [bgNotLoadedColor, setBgNotLoadedColor] = useState("");
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setBgNotLoadedColor(
       ["bg-primary/50", "bg-secondary/50", "bg-neutral/50"][
         Math.floor(Math.random() * 3)
       ],
-  );
+    );
+  }, []);
 
   return (
     <div
