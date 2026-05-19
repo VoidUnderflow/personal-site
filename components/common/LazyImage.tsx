@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Spinner } from "@/components/ui/spinner";
 
 interface LazyImageProps {
@@ -21,6 +21,9 @@ export default function LazyImage({
 }: LazyImageProps) {
   const [loaded, setLoaded] = useState(false);
 
+  // Ref to help check if the image is cached.
+  const imgRef = useRef<HTMLImageElement>(null);
+
   // Avoid hydration mismatch.
   const [bgNotLoadedColor, setBgNotLoadedColor] = useState("");
 
@@ -31,6 +34,9 @@ export default function LazyImage({
         Math.floor(Math.random() * 3)
       ],
     );
+
+    // Set loaded to true if image was cached.
+    if (imgRef.current?.complete) setLoaded(true);
   }, []);
 
   return (
@@ -51,6 +57,7 @@ export default function LazyImage({
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
+        ref={imgRef}
         width={width}
         height={height}
         alt={alt}
