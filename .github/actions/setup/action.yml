@@ -1,5 +1,5 @@
-name: Node Setup
-description: Checkout, setup Node 24, and restore node_modules cache
+name: Node setup
+description: Setup Node 24 and restore node_modules cache
 
 outputs:
   cache-hit:
@@ -9,8 +9,6 @@ outputs:
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v6
-
     - uses: actions/setup-node@v6
       with:
         node-version: 24
