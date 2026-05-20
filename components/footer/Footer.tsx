@@ -7,6 +7,7 @@ import { MailIcon } from "../icons/MailIcon";
 import { Separator } from "@/components/ui/separator";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import IconTooltip from "./IconTooltip";
+import FooterQuote from "./FooterQuote";
 
 export default function Footer() {
   return (
@@ -71,10 +72,7 @@ export default function Footer() {
           </ul>
         </TooltipProvider>
       </div>
-      <p className="text-foreground/40 max-w-sm text-center text-xs italic">
-        &ldquo;The obstacle is the way.&rdquo;
-        <span className="not-italic"> - Marcus Aurelius</span>
-      </p>
+      <FooterQuote />
     </footer>
   );
 }
