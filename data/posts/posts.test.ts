@@ -18,5 +18,4 @@ describe("Validate metadata for posts.", () => {
       expect(post.date).toMatch(DATE_REGEX);
     }
   });
-
 });
