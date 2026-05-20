@@ -1,0 +1,22 @@
+name: Node Setup
+description: Checkout, setup Node 24, and restore node_modules cache
+
+outputs:
+  cache-hit:
+    description: Whether node_modules cache was restored
+    value: ${{ steps.cache.outputs.cache-hit }}
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v6
+
+    - uses: actions/setup-node@v6
+      with:
+        node-version: 24
+
+    - id: cache
+      uses: actions/cache@v5
+      with:
+        path: node_modules
+        key: node-modules-${{ hashFiles('package-lock.json') }}
