@@ -9,7 +9,7 @@ I'm aiming to not pay anything except for the domain. The current plan is:
 - Have a main and dev branch on GitHub, perform some checks / tests when merging to main;
 - Automatically deployed on Vercel when main is updated;
 - External images + resume hosted in a Cloudflare R2 bucket; can only be accessed from the voidunderflow.com domain;
-- Have a GitHub Action cron-job-like thing (if possible) to query Cloudflare bucket every x minutes and make it private if half the limits are reached;
+- ~~Have a GitHub Action cron-job-like thing (if possible) to query Cloudflare bucket every x minutes and make it private if half the limits are reached;~~ In practice, this would have meant creating an API token with bucket edit capabilities then making it available for the GitHub action. This would make my bucket less secure, so I'll just count on the Cloudflare limit alerts I've set and make the bucket private manually.
 
 Will need to keep these non-Git-committed images backed up in my GDrive / Mega, and then copy them in when building the website locally (since I won't be able to access the bucket from localhost).
 
