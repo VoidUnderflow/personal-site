@@ -3,7 +3,7 @@
 import { GithubIcon } from "../icons/GithubIcon";
 import { LeetcodeIcon } from "../icons/LeetcodeIcon";
 import { LinkedinIcon } from "../icons/LinkedinIcon";
-import { MailIcon } from "../icons/MailIcon";
+import { GoodreadsIcon } from "../icons/GoodreadsIcon";
 import { Separator } from "@/components/ui/separator";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import IconTooltip from "./IconTooltip";
@@ -63,9 +63,13 @@ export default function Footer() {
               />
             </li>
             <li>
-              <IconTooltip label="Email">
-                <a href="mailto:alexmihai.ciobanu@gmail.com">
-                  <MailIcon size={20} className="text-foreground" />
+              <IconTooltip label="Goodreads">
+                <a
+                  href="https://www.goodreads.com/user/show/194734626-mihai-c"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GoodreadsIcon size={20} className="text-foreground" />
                 </a>
               </IconTooltip>
             </li>
