@@ -23,21 +23,31 @@ export default function AboutPage() {
         <CardContent className="flex flex-col gap-4 py-2">
           <Section label="Who">
             <p>
-              My name is Mihai, and I&apos;m a backend-focused full stack dev.
+              My name is Mihai. I code for a living and for fun. It&apos;s
+              likely that I&apos;m currently a full stack dev{" "}
+              <span className="italic">somewhere</span>.
               <br />
               If you want to know more about me, you can read my
               <Link href="/posts/welcome" className="inline-link">
                 {" "}
                 welcome
               </Link>{" "}
-              post.
+              post. If you really want to know more about me, shoot me an email{" "}
+              <a
+                href="mailto:alexmihai.ciobanu@gmail.com"
+                className="inline-link"
+              >
+                here
+              </a>
+              .
             </p>
           </Section>
           <Separator />
           <Section label="Frontend">
-            React + Tailwind. VanillaJS too, but only if absolutely necessary.{" "}
-            <br />I work best when I have a Figma to follow, my designs are a
-            bit hit-and-miss.
+            React + Tailwind. Vanilla JS too, but only if absolutely necessary.{" "}
+            <br />I work best when I have a design to follow, my own are a bit
+            hit-or-miss (e.g: might <span className="italic">accidentally</span>{" "}
+            forget to add light mode).
           </Section>
           <Separator />
           <Section label="Backend">
@@ -54,10 +64,11 @@ export default function AboutPage() {
           </Section>
           <Separator />
           <Section label="Resume">
-            My resume can be found <Link href={getResumeURL()}>here.</Link>{" "}
-            <br />
-            In the future, I may be adding some things that didn&apos;t fit
-            there on this page.
+            My resume can be found <Link href={getResumeURL()}>here</Link>. Some
+            older interesting things that I&apos;ve done didn&apos;t make the
+            cut. <br />
+            Will probably add them in the future™, as I also want to talk a bit
+            more about my previous roles.
           </Section>
         </CardContent>
       </Card>
