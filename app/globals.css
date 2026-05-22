@@ -136,7 +136,7 @@
   }
 
   .hero-quote {
-    @apply text-foreground/70 text-center text-sm italic;
+    @apply text-foreground/70 absolute top-full left-1/2 mt-2 w-3/4 -translate-x-1/2 text-center text-sm italic;
   }
 }
 

@@ -198,10 +198,7 @@ export function AnimatedHero() {
         underflowStrokeOpacity={underflowStrokeOpacity}
         layout="horizontal"
       />
-      <motion.p
-        style={{ opacity: groupOpacity }}
-        className="hero-quote absolute top-full left-1/2 mt-2 w-3/4 -translate-x-1/2"
-      >
+      <motion.p style={{ opacity: groupOpacity }} className="hero-quote">
         {verse}
       </motion.p>
     </div>
