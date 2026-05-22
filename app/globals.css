@@ -125,6 +125,11 @@
 }
 
 @layer components {
+  /* If SCROLL_REVEAL_BREAKPOINT in useHomeScrollReveal.ts changes, update xl: here to match. */
+  .hero-container {
+    @apply -mt-10 flex flex-col items-center justify-center py-24 md:py-44 xl:h-screen xl:py-0;
+  }
+
   .page-vertical-spacing {
     @apply flex flex-col gap-4;
   }
