@@ -15,7 +15,7 @@ const projects: Project[] = [
     id: "personal-website",
     title: "voidunderflow.com",
     description:
-      "This website. Made with Next.js and hosted on Vercel. Uses Giscus for discussions and MDX for displaying posts.",
+      "This website. Made with Next.js and hosted on Vercel. Uses Cloudflare R2 for serving assets and MDX for displaying posts.",
     githubUrl: "https://github.com/VoidUnderflow/personal-site",
     tags: ["NextJS", "TailwindCSS", "TypeScript", "MDX"],
     image: getImageURL("projects", "voidunderflow.png"),
