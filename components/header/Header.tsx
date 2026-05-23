@@ -31,8 +31,9 @@ export default function Header({ className }: HeaderProps) {
       style={scrollRevealEnabled ? { opacity: headerOpacity } : undefined}
     >
       <div className={scrollRevealEnabled ? "py-8" : undefined}>
-        <nav className="flex flex-col gap-2 md:flex-row md:justify-between">
-          <div className="flex flex-col items-center md:flex-row md:gap-8 lg:gap-4">
+        <nav className="flex flex-col items-center gap-4 xl:flex-row xl:justify-between">
+          {/* xl+: logo and toggle on the left */}
+          <div className="hidden items-center gap-4 xl:flex">
             <Link href="/">
               <p className="hover:border-tertiary border-background border-2 px-1 text-2xl hover:border-dashed">
                 <span className="text-foreground font-logo-void">VOID</span>
@@ -43,7 +44,12 @@ export default function Header({ className }: HeaderProps) {
             </Link>
             <ThemeToggle />
           </div>
-          <ul className="flex w-full justify-center gap-8 md:justify-end">
+          <ul className="flex w-full justify-center gap-8 xl:w-auto xl:justify-end">
+            <li className="xl:hidden">
+              <NavLink href="/" color="neutral">
+                Home
+              </NavLink>
+            </li>
             <li>
               <NavLink href="/posts" color="primary">
                 Posts
@@ -60,6 +66,10 @@ export default function Header({ className }: HeaderProps) {
               </NavLink>
             </li>
           </ul>
+          {/* <xl: toggle centered below links */}
+          <div className="xl:hidden">
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
     </motion.header>
