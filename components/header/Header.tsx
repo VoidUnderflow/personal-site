@@ -44,7 +44,7 @@ export default function Header({ className }: HeaderProps) {
             </Link>
             <ThemeToggle />
           </div>
-          <ul className="flex w-full justify-center gap-8 xl:w-auto xl:justify-end">
+          <ul className="flex w-full justify-center gap-6 md:gap-8 xl:w-auto xl:justify-end">
             <li className="xl:hidden">
               <NavLink href="/" color="neutral">
                 Home
