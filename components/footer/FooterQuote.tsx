@@ -8,7 +8,7 @@ export default function FooterQuote() {
   if (quote === null) return null;
 
   return (
-    <p className="text-foreground/40 max-w-sm text-center text-xs italic">
+    <p className="text-foreground/40 max-w-sm text-center text-xs italic md:text-lg xl:text-xs">
       {quote.parts.map((part, idx) => {
         if ("break" in part) return <br key={idx} />;
         if (part.href) {
