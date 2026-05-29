@@ -165,6 +165,13 @@
   a {
     @apply text-secondary visited:text-primary;
   }
+
+  .prose del,
+  .prose s {
+    text-decoration: none;
+    background: linear-gradient(currentColor, currentColor) no-repeat 50% 60% /
+      100% 1px;
+  }
 }
 
 /* rehype-pretty-code dual theme
