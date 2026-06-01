@@ -1,6 +1,8 @@
 import { getAllPosts } from "@/data/posts/posts";
 import { MetadataRoute } from "next";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://voidunderflow.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
