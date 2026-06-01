@@ -15,7 +15,7 @@ const projects: Project[] = [
     id: "personal-website",
     title: "voidunderflow.com",
     description:
-      "This website. Made with Next.js and hosted on Vercel. Uses Giscus for discussions and MDX for displaying posts.",
+      "This website. Made with Next.js and hosted on Vercel. Uses Cloudflare R2 for serving assets and MDX for displaying posts.",
     githubUrl: "https://github.com/VoidUnderflow/personal-site",
     tags: ["NextJS", "TailwindCSS", "TypeScript", "MDX"],
     image: getImageURL("projects", "voidunderflow.png"),
@@ -48,7 +48,7 @@ const projects: Project[] = [
 
   {
     id: "strawberry-job-board-api",
-    title: "Strawberry GraphQL job board API",
+    title: "Job board API",
     description:
       "A practice GraphQL API using Strawberry, FastAPI, and SQLAlchemy. Has JWT-based auth, roles, and >90% test coverage.",
     githubUrl: "https://github.com/VoidUnderflow/strawberry-job-board-api",
@@ -94,9 +94,9 @@ const projects: Project[] = [
   },
   {
     id: "drf-recipes",
-    title: "Django Rest Framework - Recipes API",
+    title: "Recipes API",
     description:
-      "Practice API with a focus on testing (built with TDD - 99% coverage). Has CI with GitHub Actions, JWT auth.",
+      "Practice DRF API with a focus on testing (built with TDD - 99% coverage). Has CI with GitHub Actions, JWT auth.",
     githubUrl: "https://github.com/VoidUnderflow/drf-recipes-practice-api",
     tags: ["Django", "Docker", "Postgres"],
     image: getImageURL("projects", "drf-recipes.png"),

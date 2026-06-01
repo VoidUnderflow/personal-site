@@ -3,46 +3,37 @@
 import Link from "next/link";
 import ThemeToggle from "./ThemeToggle";
 import NavLink from "./NavLink";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useMotionValueEvent,
-} from "motion/react";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { motion } from "motion/react";
+import { useHomeScrollReveal } from "@/hooks/useHomeScrollReveal";
+import { useMounted } from "@/hooks/useMounted";
 
 interface HeaderProps {
   className: string;
 }
 
 export default function Header({ className }: HeaderProps) {
-  const isHome = usePathname() === "/";
+  const mounted = useMounted();
 
-  // Header appears, hero disappears as we scroll down (on the home page).
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 400], [0, 1]);
+  // On xl+ screens: header appears as hero disappears while scrolling down.
+  const { scrollRevealEnabled, headerOpacity, revealStarted } =
+    useHomeScrollReveal();
 
-  // Don't render header if scroll is at the very top.
-  const [active, setActive] = useState(false);
-  useMotionValueEvent(scrollY, "change", (value) => {
-    setActive(value > 50);
-  });
-
-  if (isHome && !active) return null;
+  if (!mounted) return null;
+  if (scrollRevealEnabled && !revealStarted) return null;
 
   return (
     <motion.header
       className={
-        isHome
+        scrollRevealEnabled
           ? "bg-background fixed inset-x-0 top-0 z-50 mx-auto max-w-4xl px-6 md:px-12"
           : className
       }
-      style={isHome ? { opacity } : undefined}
+      style={scrollRevealEnabled ? { opacity: headerOpacity } : undefined}
     >
-      <div className={isHome ? "py-8" : undefined}>
-        <nav className="flex flex-col gap-2 md:flex-row md:justify-between">
-          <div className="flex flex-col items-center md:flex-row md:gap-8 lg:gap-4">
+      <div className={scrollRevealEnabled ? "py-8" : undefined}>
+        <nav className="flex flex-col items-center gap-4 xl:flex-row xl:justify-between">
+          {/* xl+: logo and toggle on the left */}
+          <div className="hidden items-center gap-4 xl:flex">
             <Link href="/">
               <p className="hover:border-tertiary border-background border-2 px-1 text-2xl hover:border-dashed">
                 <span className="text-foreground font-logo-void">VOID</span>
@@ -53,7 +44,12 @@ export default function Header({ className }: HeaderProps) {
             </Link>
             <ThemeToggle />
           </div>
-          <ul className="flex w-full justify-center gap-8 md:justify-end">
+          <ul className="flex w-full justify-center gap-6 md:gap-8 xl:w-auto xl:justify-end">
+            <li className="xl:hidden">
+              <NavLink href="/" color="neutral">
+                Home
+              </NavLink>
+            </li>
             <li>
               <NavLink href="/posts" color="primary">
                 Posts
@@ -70,6 +66,10 @@ export default function Header({ className }: HeaderProps) {
               </NavLink>
             </li>
           </ul>
+          {/* <xl: toggle centered below links */}
+          <div className="xl:hidden">
+            <ThemeToggle />
+          </div>
         </nav>
       </div>
     </motion.header>

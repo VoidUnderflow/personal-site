@@ -63,9 +63,6 @@ export function AnimatedHero() {
   const bgY = useMotionValue(0);
 
   useAnimationFrame((time) => {
-    // TODO: Can have different bg coordinates for the SVGs.
-    // e.g: left can move counterclockwise, right clockwise or both same dir + offset(?)
-    // TODO: OR.. void doesn't move at all, while underflow is the thing that's moving
     const angle = (time * 0.00005) % (Math.PI * 2);
     bgX.set(Math.cos(angle) * 150);
     bgY.set(Math.sin(angle) * 150);
@@ -198,10 +195,7 @@ export function AnimatedHero() {
         underflowStrokeOpacity={underflowStrokeOpacity}
         layout="horizontal"
       />
-      <motion.p
-        style={{ opacity: groupOpacity }}
-        className="hero-quote absolute top-full left-1/2 mt-2 w-3/4 -translate-x-1/2"
-      >
+      <motion.p style={{ opacity: groupOpacity }} className="hero-quote">
         {verse}
       </motion.p>
     </div>

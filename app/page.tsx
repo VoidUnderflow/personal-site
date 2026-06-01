@@ -18,7 +18,7 @@ export default function HomePage() {
     <>
       <link rel="preload" as="image" href={getImageURL("hero", "tears.jpg")} />
       <link rel="preload" as="image" href={getImageURL("hero", "smile.jpg")} />
-      <div className="-mt-10 flex h-screen flex-col items-center justify-center">
+      <div className="hero-container">
         <Hero />
       </div>
       <div className="flex flex-col gap-12 py-16">

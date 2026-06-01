@@ -8,6 +8,7 @@ export function GoodreadsIcon({ size = 24, className }: IconProps) {
       height={size}
       viewBox="0 0 512 512"
       className={className}
+      aria-hidden="true"
     >
       <rect width="512" height="512" rx="15%" fill="currentColor" />
       <path

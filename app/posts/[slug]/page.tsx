@@ -56,16 +56,15 @@ export default async function PostPage({
       <div className="prose prose-lg mx-auto max-w-prose">
         <Post />
       </div>
-      {/* TODO: Modify this when you create a discussion with GitHub Actions. */}
-      <p className="text-muted-foreground text-sm">
-        Want to discuss this post? Head over to{" "}
+      <p className="text-muted-foreground mx-auto text-center text-sm">
+        If you want to share your thoughts or say hi, please create a discussion{" "}
         <Link
           href="https://github.com/VoidUnderflow/personal-site/discussions"
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
         >
-          GitHub Discussions
+          here
         </Link>
         .
       </p>

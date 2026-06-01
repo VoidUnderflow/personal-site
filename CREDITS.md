@@ -2,9 +2,10 @@
 
 ## Hero Images
 
-| Image     | Author                                                                                                            | Source                                                                                                                                                |
-| --------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| chaos.jpg | [Joel Filipe](https://unsplash.com/@joelfilip?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) | [Unsplash](https://unsplash.com/photos/multicolored-abstract-painting-QwoNAhbmLLo?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) |
+| Image     | Author                                                      | Source                                                                                           |
+| --------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| chaos.jpg | [Steve A Johnson](https://www.pexels.com/@steve-a-johnson/) | [Pexels](https://www.pexels.com/photo/vibrant-abstract-expressionist-digital-painting-30580213/) |
+| tears.jpg | [Vitor Diniz](https://www.pexels.com/@vitor-diniz/)         | [Pexels](https://www.pexels.com/photo/abstract-art-with-swirling-light-patterns-31103730/)       |
 
 The following are crops of my own images, all rights reserved.
 Reminder for future me: I used GIMP.
@@ -13,7 +14,6 @@ Reminder for future me: I used GIMP.
 - calm.jpg: sunset sky near home;
 - smile.jpg: close-up of my cat and a hoodie;
 - summer.jpg: pretty tree on an even prettier Cambridge summer day;
-- tears.jpg: foggy day near Arthur's Seat;
 - winter.jpg: somewhere in the Highlands;
 
 ## Icons
