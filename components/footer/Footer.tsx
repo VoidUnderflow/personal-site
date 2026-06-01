@@ -21,6 +21,7 @@ export default function Footer() {
                   href="https://github.com/VoidUnderflow"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                 >
                   <GithubIcon size={20} className="text-foreground" />
                 </a>
@@ -38,6 +39,7 @@ export default function Footer() {
                   href="https://leetcode.com/u/VoidUnderflow/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LeetCode"
                 >
                   <LeetcodeIcon size={20} className="text-foreground" />
                 </a>
@@ -51,7 +53,7 @@ export default function Footer() {
             </li>
             <li>
               <IconTooltip label="LinkedIn">
-                <a href="/linkedin-404">
+                <a href="/linkedin-404" aria-label="LinkedIn">
                   <LinkedinIcon size={20} className="text-foreground" />
                 </a>
               </IconTooltip>
@@ -68,6 +70,7 @@ export default function Footer() {
                   href="https://www.goodreads.com/user/show/194734626-mihai-c"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Goodreads"
                 >
                   <GoodreadsIcon size={20} className="text-foreground" />
                 </a>

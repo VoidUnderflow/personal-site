@@ -8,6 +8,7 @@ export function LeetcodeIcon({ size = 24, className }: IconProps) {
       height={size}
       viewBox="0 0 24 24"
       className={className}
+      aria-hidden="true"
     >
       <path
         fill="currentColor"
