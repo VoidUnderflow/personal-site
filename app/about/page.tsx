@@ -32,7 +32,7 @@ export default function AboutPage() {
                 {" "}
                 welcome
               </Link>{" "}
-              post. If you really want to know more about me, shoot me an email{" "}
+              post. You can contact me by email{" "}
               <a
                 href="mailto:alexmihai.ciobanu@gmail.com"
                 className="inline-link"
@@ -57,7 +57,7 @@ export default function AboutPage() {
           </Section>
           <Separator />
           <Section label="current focus">
-            Getting back into C#, and doing{" "}
+            Getting back into Java, and doing{" "}
             <Link href="https://www.frontendmentor.io">Frontend Mentor</Link>{" "}
             challenges. Also learning Rust, but it&apos;s more of a hobby thing
             for now.
