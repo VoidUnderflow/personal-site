@@ -61,7 +61,7 @@ const projects: Project[] = [
       "Algo practice in Python and TypeScript - LeetCode problems, Advent of Code, and some theory.",
     githubUrl:
       "https://github.com/VoidUnderflow/algorithms-and-data-structures",
-    tags: ["Python", "TypeScript"],
+    tags: ["Python", "TypeScript", "Rust"],
     image: getImageURL("projects", "dsa.png"),
   },
   {
