@@ -45,7 +45,6 @@ const projects: Project[] = [
     tags: ["React", "TailwindCSS", "TypeScript"],
     image: getImageURL("projects", "electron-progress-tracker.png"),
   },
-
   {
     id: "strawberry-job-board-api",
     title: "Job board API",
@@ -62,7 +61,7 @@ const projects: Project[] = [
       "Algo practice in Python and TypeScript - LeetCode problems, Advent of Code, and some theory.",
     githubUrl:
       "https://github.com/VoidUnderflow/algorithms-and-data-structures",
-    tags: ["Python", "TypeScript"],
+    tags: ["Python", "TypeScript", "Rust"],
     image: getImageURL("projects", "dsa.png"),
   },
   {
@@ -73,6 +72,15 @@ const projects: Project[] = [
     githubUrl: "https://github.com/VoidUnderflow/miscellaneous-projects",
     tags: ["Python", "Java", "Rust", "Haskell"],
     image: getImageURL("projects", "misc-fractal.png"),
+  },
+  {
+    id: "csharp-practice",
+    title: ".NET Practice",
+    description:
+      "Learning C# and .NET; includes a React + ASP .NET Core events management app.",
+    githubUrl: "https://github.com/VoidUnderflow/csharp-practice",
+    tags: ["CSharp", "React", "DotNet"],
+    image: getImageURL("projects", "csharp-practice.png"),
   },
   {
     id: "ml-practice",
