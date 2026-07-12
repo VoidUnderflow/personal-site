@@ -6,8 +6,7 @@ import ProjectTagBadge from "@/components/projects/ProjectTagBadge";
 import { Card } from "@/components/ui/card";
 
 type HomeCardProps =
-  | { variant: "post"; post: Post }
-  | { variant: "project"; project: Project };
+  { variant: "post"; post: Post } | { variant: "project"; project: Project };
 
 export function HomeCard(props: HomeCardProps) {
   const { variant } = props;

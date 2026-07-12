@@ -17,6 +17,8 @@ export const PROJECT_TAGS = {
   PyTest: "devicon:pytest",
   JavaScript: "devicon:javascript",
   Django: "devicon-plain:django",
+  CSharp: "devicon:csharp",
+  DotNet: "skill-icons:dotnet",
 };
 
 export type ProjectTagId = keyof typeof PROJECT_TAGS;
