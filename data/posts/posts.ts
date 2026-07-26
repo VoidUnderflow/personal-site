@@ -20,6 +20,14 @@ const posts: Post[] = [
     date: "2026-04-16",
     tags: [PostTag.Meta, PostTag.Introduction],
   },
+  {
+    slug: "flat-finding-in-edi",
+    title: "Renting in Edinburgh - a neverending saga",
+    description:
+      "Helpful(?) tips and funny(??) stories, with a healthy dose of venting",
+    date: "2026-07-25",
+    tags: [PostTag.Personal],
+  },
 ];
 
 export function getAllPosts(): Post[] {
