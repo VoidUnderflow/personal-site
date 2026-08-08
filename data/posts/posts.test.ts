@@ -1,6 +1,8 @@
 import { describe, test, expect } from "vitest";
 import { getAllPosts } from "./posts";
 
+// TODO: Add test that matches every slug to a folder (or not).
+
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 
 describe("Validate metadata for posts.", () => {
