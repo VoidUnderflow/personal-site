@@ -21,7 +21,7 @@ const posts: Post[] = [
     tags: [PostTag.Meta, PostTag.Introduction],
   },
   {
-    slug: "renting-in-edi-a-neverending-saga",
+    slug: "renting-edi-saga",
     title: "Renting in Edinburgh - a neverending saga",
     description:
       "Funny{{citation needed}} stories, with a healthy dose of venting",
@@ -29,7 +29,7 @@ const posts: Post[] = [
     tags: [PostTag.Personal],
   },
   {
-    slug: "renting-in-edi-advice",
+    slug: "renting-edi-advice",
     title: "Renting in Edinburgh - some practical advice",
     description: "A flimsy companion to my previous rant",
     date: "2026-07-25",
