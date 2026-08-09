@@ -1,6 +1,6 @@
 import type { MDXComponents } from "mdx/types";
 import Link from "next/link";
-import LazyImage from "@/components/common/LazyImage";
+import PostImage from "@/components/posts/PostImage";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -39,14 +39,7 @@ const components: MDXComponents = {
   strong: ({ children }) => (
     <strong className="text-foreground">{children}</strong>
   ),
-  LazyImage: ({ src, width, height, alt }) => (
-    <LazyImage
-      src={src as string}
-      width={Number(width)}
-      height={Number(height)}
-      alt={(alt as string) ?? ""}
-    />
-  ),
+  PostImage,
 };
 
 export function useMDXComponents(): MDXComponents {
