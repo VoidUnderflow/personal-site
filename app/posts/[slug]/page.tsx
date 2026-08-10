@@ -53,7 +53,7 @@ export default async function PostPage({
 
       <Separator />
 
-      <div className="prose prose-lg mx-auto max-w-prose">
+      <div className="prose mx-auto max-w-prose">
         <Post />
       </div>
       <p className="text-muted-foreground mx-auto text-center text-sm">

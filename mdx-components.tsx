@@ -4,30 +4,35 @@ import PostImage from "@/components/posts/PostImage";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
-    <h1 className="text-foreground mt-8 mb-3 text-2xl underline decoration-dashed">
+    <h1 className="text-foreground text-post-h1 mt-8 mb-3 underline decoration-dashed">
       {children}
     </h1>
   ),
   h2: ({ children }) => (
-    <h2 className="text-foreground mt-7 mb-2 text-[1.4rem] underline">
+    <h2 className="text-foreground text-post-h2 mt-7 mb-2 underline">
       {children}
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="text-foreground mt-6 mb-2 text-[1.3rem] underline decoration-double">
+    <h3 className="text-foreground text-post-h3 mt-6 mb-2 underline decoration-double">
       {children}
     </h3>
   ),
+  h4: ({ children }) => (
+    <h4 className="text-foreground text-post-h4 mt-5 mb-2 underline decoration-dotted">
+      {children}
+    </h4>
+  ),
   p: ({ children }) => (
-    <p className="text-foreground text-[1.05rem]">{children}</p>
+    <p className="text-foreground text-post-body">{children}</p>
   ),
   ol: ({ children }) => (
-    <ol className="text-foreground [&_li::marker]:text-foreground text-md">
+    <ol className="text-foreground [&_li::marker]:text-foreground text-post-body">
       {children}
     </ol>
   ),
   ul: ({ children }) => (
-    <ul className="text-foreground [&_li::marker]:text-foreground text-md">
+    <ul className="text-foreground [&_li::marker]:text-foreground text-post-body">
       {children}
     </ul>
   ),

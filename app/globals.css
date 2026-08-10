@@ -43,6 +43,13 @@
   --color-tertiary: var(--tertiary);
   --color-neutral: var(--neutral);
 
+  /* Post text sizes. */
+  --text-post-body: 1.05rem;
+  --text-post-h1: 1.5rem;
+  --text-post-h2: 1.4rem;
+  --text-post-h3: 1.3rem;
+  --text-post-h4: 1.2rem;
+
   --font-base: var(--font-space-mono);
   --font-logo-underflow: var(--font-rubik-lines);
   --font-logo-void: var(--font-rubik-fade);
