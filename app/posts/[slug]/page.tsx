@@ -52,7 +52,7 @@ export default async function PostPage({
           </time>
           <PostTagList tags={post.tags} />
         </div>
-        <Separator className="mx-auto mb-16 w-full" />
+        <Separator className="mx-auto mb-12 w-full" />
       </header>
 
       <div className="prose mx-auto w-full max-w-2xl">
