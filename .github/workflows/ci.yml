@@ -16,21 +16,21 @@ jobs:
         if: steps.node-setup.outputs.cache-hit != 'true'
         run: npm ci
 
-  prettier:
+  oxfmt:
     needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npx prettier --check .
+      - run: npx oxfmt --check .
 
-  eslint:
+  oxlint:
     needs: setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npx eslint .
+      - run: npx oxlint .
 
   typescript:
     needs: setup

@@ -53,6 +53,7 @@ export default function Footer() {
             </li>
             <li>
               <IconTooltip label="LinkedIn">
+                {/* oxlint-disable-next-line next/no-html-link-for-pages */}
                 <a href="/linkedin-404" aria-label="LinkedIn">
                   <LinkedinIcon size={20} className="text-foreground" />
                 </a>
