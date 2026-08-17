@@ -3,7 +3,7 @@ export type Quote = { parts: QuotePart[]; author?: string; weight: number };
 
 export const quotes: Quote[] = [
   {
-    parts: [{ text: "Rolled a 1 on your quote" }],
+    parts: [{ text: "Rolled a 1 on your quote." }],
     weight: 1,
   },
   {
@@ -60,7 +60,7 @@ export const quotes: Quote[] = [
     weight: 2,
   },
   {
-    parts: [{ text: "Sunrise, Parabellum" }],
+    parts: [{ text: "Sunrise, Parabellum." }],
     weight: 2,
   },
   {
@@ -72,7 +72,11 @@ export const quotes: Quote[] = [
     weight: 2,
   },
   {
-    parts: [{ text: "Off-meta maths" }],
+    parts: [{ text: "Off-meta maths." }],
+    weight: 2,
+  },
+  {
+    parts: [{ text: "Chaos is a ladder." }],
     weight: 2,
   },
 ];
