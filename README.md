@@ -13,6 +13,14 @@ I'm aiming to not pay anything except for the domain. The current plan is:
 
 Will need to keep these non-Git-committed images backed up in my GDrive / Mega, and then copy them in when building the website locally (since I won't be able to access the bucket from localhost).
 
+### Adding a post or project with images (runbook)
+
+It's pretty manual, but I'm fine with it for now:
+
+- Create a temp folder with a posts/projects subfolder;
+- Before merging to main, upload the images to the R2 bucket;
+- After merging to main, place the images in the Backup folder, and upload to Mega & external storage;
+
 ### Relevant limits (2026)
 
 #### Vercel hobby

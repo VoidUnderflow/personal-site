@@ -1,5 +1,5 @@
 name: Node setup
-description: Setup Node 24 and restore node_modules cache
+description: Setup Node 24, pnpm, and restore node_modules cache
 
 outputs:
   cache-hit:
@@ -9,6 +9,8 @@ outputs:
 runs:
   using: composite
   steps:
+    - uses: pnpm/action-setup@v4
+
     - uses: actions/setup-node@v6
       with:
         node-version: 24
@@ -17,4 +19,4 @@ runs:
       uses: actions/cache@v5
       with:
         path: node_modules
-        key: node-modules-${{ hashFiles('package-lock.json') }}
+        key: node-modules-${{ hashFiles('pnpm-lock.yaml') }}

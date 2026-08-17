@@ -15,6 +15,7 @@ export function PostTagBadge({
   onToggle,
 }: PostTagBadgeProps) {
   return (
+    // oxlint-disable-next-line jsx-a11y/no-static-element-interactions jsx-a11y/click-events-have-key-events
     <div
       className={clsx(
         "border-foreground rounded-lg border px-1.5 py-0.5 text-xs",
