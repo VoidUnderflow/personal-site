@@ -14,7 +14,7 @@ jobs:
 
       - name: Install dependencies
         if: steps.node-setup.outputs.cache-hit != 'true'
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
   oxfmt:
     needs: setup
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npx oxfmt --check .
+      - run: pnpm exec oxfmt --check .
 
   oxlint:
     needs: setup
@@ -30,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npx oxlint .
+      - run: pnpm exec oxlint .
 
   typescript:
     needs: setup
@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npx tsc --noEmit
+      - run: pnpm exec tsc --noEmit
 
   unit-tests:
     needs: setup
@@ -46,7 +46,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npm test
+      - run: pnpm test
 
   audit:
     needs: setup
@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npm audit --audit-level=high
+      - run: pnpm audit --audit-level=high
 
   build:
     needs: setup
@@ -62,7 +62,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: ./.github/actions/setup
-      - run: npm run build
+      - run: pnpm run build
 
   trufflehog:
     runs-on: ubuntu-latest
