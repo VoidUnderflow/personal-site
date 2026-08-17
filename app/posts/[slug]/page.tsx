@@ -42,21 +42,24 @@ export default async function PostPage({
   return (
     <article className="page-vertical-spacing">
       <ScrollProgressBar />
-      <header className="flex flex-col gap-3">
+      <header className="flex flex-col gap-4">
         <h1 className="title-heading">{post.title}</h1>
-        <time className="text-muted-foreground italic" dateTime={post.date}>
-          {formatPostDate(post.date)}
-        </time>
-        <p>{post.description}</p>
-        <PostTagList tags={post.tags} />
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <p>{post.description}</p>
+          <p>–</p>
+          <time className="text-muted-foreground italic" dateTime={post.date}>
+            {formatPostDate(post.date)}
+          </time>
+          <PostTagList tags={post.tags} />
+        </div>
+        <Separator className="mx-auto mb-12 w-full" />
       </header>
 
-      <Separator />
-
-      <div className="prose prose-lg mx-auto max-w-prose">
+      <div className="prose mx-auto w-full max-w-2xl">
         <Post />
       </div>
-      <p className="text-muted-foreground mx-auto text-center text-sm">
+
+      <p className="text-muted-foreground mt-8 text-center text-sm">
         If you want to share your thoughts or say hi, please create a discussion{" "}
         <Link
           href="https://github.com/VoidUnderflow/personal-site/discussions"

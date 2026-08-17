@@ -21,8 +21,7 @@ export default function ProjectsPage() {
       <h1 className="title-heading">Projects</h1>
       <p>
         Stuff I&apos;ve been working on in my free time. My main focus is to
-        learn new things and have fun doing it. <br /> Unsure if there&apos;s
-        anything truly useful in here.
+        learn new things and have fun doing it.
       </p>
 
       <Separator />
