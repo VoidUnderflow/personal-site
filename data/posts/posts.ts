@@ -24,14 +24,14 @@ const posts: Post[] = [
     slug: "renting-edi-saga",
     title: "Renting in Edinburgh - a neverending saga",
     description: "Abandon hope all ye who rent here",
-    date: "2026-08-10",
+    date: "2026-08-16",
     tags: [PostTag.Personal],
   },
   {
     slug: "renting-edi-advice",
     title: "Renting in Edinburgh - limited practical advice",
     description: "A flimsy companion to my previous rant",
-    date: "2026-08-11",
+    date: "2026-08-17",
     tags: [PostTag.Personal],
   },
 ];
